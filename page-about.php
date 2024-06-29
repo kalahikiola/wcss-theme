@@ -19,20 +19,29 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			the_post(); ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+				<header class="entry-header">
+					<h1>About Us</h1>
+				</header>
+				<div class="entry-content">
+				<?php the_post_thumbnail('large')?>
 
+					<?php if ( function_exists ( 'get_field' ) ) {
+						if(get_field('about_us')){
+							?><p><?php the_field('about_us')?></p><?php
+						}
+					}?>
+				</div>
+
+	 		</article>
+		<?php
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
