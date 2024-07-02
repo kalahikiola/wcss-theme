@@ -185,3 +185,57 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Remove workshop items from products page
+function custom_pre_get_posts_query( $q ) {
+
+    if ( ! $q->is_main_query() ) return;
+    if ( ! $q->is_post_type_archive() ) return;
+
+    if ( ! is_admin() && is_shop() ) {
+
+        $q->set( 'tax_query', array(array(
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => array( 'workshops' ),
+            'operator' => 'NOT IN'
+        )));
+
+    }
+
+    remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+}
+add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+// Remove breadcrumbs
+function remove_breadcrumbs() {
+    if(!is_product()) {
+        remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
+    }
+}
+add_filter( 'woocommerce_before_main_content', 'remove_breadcrumbs');
+
+// Add testimonials to workshop page
+function testimonials_workshop() {
+
+    if (is_product_category( 'workshops' ) ) {
+        echo '<section class="testimonials">';
+            $args = array(
+                'post_type'      => 'wcss-testimonial',
+                'posts_per_page' => 3
+            );
+
+            $query = new WP_Query( $args );
+
+            if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) { $query->the_post();
+                        the_content();
+                    }
+                wp_reset_postdata();
+            }
+        echo '</section>';
+    }
+
+}
+add_action( 'woocommerce_after_main_content', 'testimonials_workshop', 9 );
