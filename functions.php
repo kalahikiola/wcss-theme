@@ -239,3 +239,42 @@ function testimonials_workshop() {
 
 }
 add_action( 'woocommerce_after_main_content', 'testimonials_workshop', 9 );
+
+
+// Add instructors to workshop page
+function instructors_workshop() {
+    if (is_product_category('workshops')) {
+        echo '<section class="instructors">';
+        
+        $args = array(
+            'post_type'      => 'wcss-instructors',
+            'posts_per_page' => -1 
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                ?>
+                <article>
+                    <?php the_post_thumbnail(); ?>
+                    <h3><?php the_title(); ?></h3>
+                    <?php
+                    if (function_exists('get_field')) { 
+                        if (get_field('bio')) {
+                            ?>
+                            <p><?php the_field('bio'); ?></p>
+                            <?php
+                        }
+                    }
+                    ?>
+                </article>
+                <?php
+            }
+            wp_reset_postdata();
+        }
+        echo '</section>';
+    }
+}
+add_action('woocommerce_after_main_content', 'instructors_workshop', 9);
