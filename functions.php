@@ -210,16 +210,14 @@ add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 
 // Remove breadcrumbs
 function remove_breadcrumbs() {
-    if(!is_product()) {
-        remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
-    }
+    remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20);
 }
-add_filter( 'woocommerce_before_main_content', 'remove_breadcrumbs');
+add_filter( 'woocommerce_before_main_content', 'remove_breadcrumbs' );
 
 // Add testimonials to workshop page
 function testimonials_workshop() {
 
-    if (is_product_category( 'workshops' ) ) {
+    if ( is_product_category( 'workshops' ) ) {
         echo '<section class="testimonials">';
             $args = array(
                 'post_type'      => 'wcss-testimonial',
