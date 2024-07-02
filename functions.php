@@ -237,11 +237,3 @@ function testimonials_workshop() {
 
 }
 add_action( 'woocommerce_after_main_content', 'testimonials_workshop', 9 );
-
-// Remove sidebar from workshop page
-function remove_sidebar_workshop() {
-    if( is_product_category( 'workshops' ) ) {
-        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
-    }
-}
-add_filter( 'woocommerce_sidebar', 'remove_sidebar_workshop' );
