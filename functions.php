@@ -185,3 +185,26 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Remove workshop items from products page
+add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+function custom_pre_get_posts_query( $q ) {
+
+    if ( ! $q->is_main_query() ) return;
+    if ( ! $q->is_post_type_archive() ) return;
+
+    if ( ! is_admin() && is_shop() ) {
+
+        $q->set( 'tax_query', array(array(
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => array( 'workshops' ),
+            'operator' => 'NOT IN'
+        )));
+
+    }
+
+    remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+}
