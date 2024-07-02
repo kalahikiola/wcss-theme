@@ -21,18 +21,69 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			the_content();
+			?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
+			<section class="featured-workshops">
+			<?php
+			$category_id = 18;
+
+			$args = array(
+				'post_type' => 'product',
+				'posts_per_page' => 4,
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'product_cat',
+						'field' => 'term_id',
+						'terms' => $category_id,
+					)
+				)
+			);
+
+			$query = new WP_Query($args);
+
+			if ($query->have_posts()) { ?>
+					<h2>Some of Our Workshops</h2><?php
+				while ($query->have_posts()) {
+					$query->the_post();
+					global $product;
+					?>
+					<article>
+						<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail('medium'); ?>
+							<h3><?php the_title();?></h3>
+						</a>
+					</article>
+					<?php
+					}
+				wp_reset_postdata();
+				} ?>
+				</section>
+
+				<section class="testimonials">
+				<?php
+				$args = array(
+				    'post_type'      => 'wcss-testimonial',
+				    'posts_per_page' => 3
+				);
+
+				$query = new WP_Query( $args );
+
+				if ( $query->have_posts() ) { ?>
+				        <?php while ( $query->have_posts() ) { $query->the_post(); ?>
+				             <?php the_content(); ?>
+				        <?php } ?>
+				    <?php
+				    wp_reset_postdata();
+					}
+				?>
+				</section>
+				<?php
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
