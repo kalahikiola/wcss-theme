@@ -208,3 +208,11 @@ function custom_pre_get_posts_query( $q ) {
     remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 
 }
+
+// Remove breadcrumbs
+add_filter( 'woocommerce_before_main_content', 'remove_breadcrumbs');
+function remove_breadcrumbs() {
+    if(!is_product()) {
+        remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
+    }
+}
