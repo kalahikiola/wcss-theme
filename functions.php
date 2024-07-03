@@ -309,3 +309,22 @@ function remove_product_sku() {
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 }
 add_action('init', 'remove_product_sku');
+
+
+// display Calendar on workshops
+function display_calendar() {
+    if (is_product_category('workshops')) {
+
+		$query = new WP_Query( array( 'page_id' => 285 ) );
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+				the_content();
+            }
+            wp_reset_postdata();
+        }
+        echo '</section>';
+    }
+}
+add_action('woocommerce_shop_loop_header', 'display_calendar');
