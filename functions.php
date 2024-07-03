@@ -329,3 +329,30 @@ function display_calendar() {
     }
 }
 add_action('woocommerce_shop_loop_header', 'display_calendar');
+
+
+
+// display upcoming workshops header on Workshops page
+function upcoming_workshops() {
+    if (is_product_category('workshops')) {
+
+		?><h2>Upcoming Workshops</h2><?php
+    }
+}
+add_action('woocommerce_shop_loop_header', 'upcoming_workshops');
+
+
+// Remove results from product categories 
+function remove_category_results() {
+    remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+}
+add_action('init', 'remove_category_results');
+
+
+// Remove sorting on workshop page
+function remove_catalog_ordering() {
+	if (is_product_category('workshops')) {
+	remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+	}
+}
+add_filter('woocommerce_before_shop_loop', 'remove_catalog_ordering');
