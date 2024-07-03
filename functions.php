@@ -318,13 +318,14 @@ function display_calendar() {
 		$query = new WP_Query( array( 'page_id' => 285 ) );
 
         if ($query->have_posts()) {
+		 ?> <section class='calendar'> <?php
             while ($query->have_posts()) {
                 $query->the_post();
 				the_content();
             }
             wp_reset_postdata();
         }
-        echo '</section>';
+        ?> </section> <?php
     }
 }
 add_action('woocommerce_shop_loop_header', 'display_calendar');
