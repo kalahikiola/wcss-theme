@@ -277,3 +277,10 @@ function instructors_workshop() {
     }
 }
 add_action('woocommerce_after_main_content', 'instructors_workshop', 9);
+
+
+// Remove SKU from single product 
+function remove_product_sku() {
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+}
+add_action('init', 'remove_product_sku');
