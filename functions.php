@@ -243,6 +243,7 @@ add_action( 'woocommerce_after_main_content', 'testimonials_workshop', 9 );
 function instructors_workshop() {
     if (is_product_category('workshops')) {
         echo '<section class="instructors">';
+		echo '<h2>Meet our Instructors</h2>';
         
         $args = array(
             'post_type'      => 'wcss-instructors',
