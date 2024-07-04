@@ -368,3 +368,17 @@ function no_compare_button($html, $post_id, $checked) {
 }
 // 4th param '(3)' is # of accepted args
 add_filter('woocommerce_products_compare_compare_button', 'no_compare_button', 10, 3);
+
+// Remove Single Product Description heading
+add_filter('woocommerce_product_description_heading', '__return_null');
+
+// remove tabs from single product description but keep the content
+function remove_woocommerce_product_tabs( $tabs ) {
+	unset( $tabs['description'] );
+	unset( $tabs['reviews'] );
+	unset( $tabs['additional_information'] );
+	return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'remove_woocommerce_product_tabs', 98 );
+
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
