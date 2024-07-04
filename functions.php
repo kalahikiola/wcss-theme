@@ -318,17 +318,71 @@ function display_calendar() {
 		$query = new WP_Query( array( 'page_id' => 285 ) );
 
         if ($query->have_posts()) {
+		 ?> <section class='calendar'> <?php
             while ($query->have_posts()) {
                 $query->the_post();
+				the_post_thumbnail();
 				the_content();
             }
             wp_reset_postdata();
         }
-        echo '</section>';
+        ?> </section> <?php
     }
 }
 add_action('woocommerce_shop_loop_header', 'display_calendar');
 
+// display upcoming workshops header on Workshops page
+function upcoming_workshops() {
+    if (is_product_category('workshops')) {
+
+		?><h2>Upcoming Workshops</h2><?php
+    }
+}
+add_action('woocommerce_shop_loop_header', 'upcoming_workshops');
+
+
+// Remove results from product categories 
+function remove_category_results() {
+    remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+}
+add_action('init', 'remove_category_results');
+
+
+// Remove sorting on workshop page
+function remove_catalog_ordering() {
+	if (is_product_category('workshops')) {
+	remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+	}
+}
+add_filter('woocommerce_before_shop_loop', 'remove_catalog_ordering');
+
+// remove compare from workshop products
+function no_compare_button($html) {
+	global $woocommerce_loop;
+	global $product;
+    if (is_product_category('workshops') || is_product() && has_term( 'workshops', 'product_cat', $product->get_id() ) ) {
+		// empty string to prevent button from diplaying
+        return '';
+    }
+    return $html;
+}
+add_filter('woocommerce_products_compare_compare_button', 'no_compare_button', 10);
+
+// Remove Single Product Description heading
+add_filter('woocommerce_product_description_heading', '__return_null');
+
+// remove tabs from single product description but keep the content
+function remove_woocommerce_product_tabs( $tabs ) {
+	unset( $tabs['description'] );
+	unset( $tabs['reviews'] );
+	unset( $tabs['additional_information'] );
+	return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'remove_woocommerce_product_tabs', 98 );
+
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
+
+// Register footer nav menu
 register_nav_menus(
     array(
         'footer-menu' => esc_html__( 'Footer - Middle', 'wcss' ),
