@@ -12,19 +12,34 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wcss-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'wcss-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'wcss-theme' ), 'wcss-theme', '<a href="https://wp.bcitwebdeveloper.ca/">FWD 37 - Team 4</a>' );
-				?>
-		</div><!-- .site-info -->
+        <div class="footer-logo">
+            <?php 
+            if ( function_exists( 'the_custom_logo' ) ) {
+                the_custom_logo();
+            }
+            ?>
+        </div>
+
+        <div class="store-info">
+			<p>123 Sesame Street</p>
+            <p>British Columbia, Canada</p>
+            <p>A1B 2C3</p>
+		</div>
+
+        <nav id="footer-navigation" class="footer-navigation">
+            <?php wp_nav_menu( array( 'theme_location' => 'footer-menu') ); ?>
+        </nav>
+
+        <div class="footer-sign-in">
+            <svg class="sign-in-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <circle cx="12" cy="8" r="4" fill="#000"/>
+                <path d="M12 14c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z" fill="#000"/>
+            </svg>
+
+            <a class="sign-in-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Sign-In',''); ?>"><?php _e('Sign-In',''); ?></a>
+        </div>
+        
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

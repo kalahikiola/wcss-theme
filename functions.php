@@ -331,8 +331,6 @@ function display_calendar() {
 }
 add_action('woocommerce_shop_loop_header', 'display_calendar');
 
-
-
 // display upcoming workshops header on Workshops page
 function upcoming_workshops() {
     if (is_product_category('workshops')) {
@@ -383,3 +381,10 @@ function remove_woocommerce_product_tabs( $tabs ) {
 add_filter( 'woocommerce_product_tabs', 'remove_woocommerce_product_tabs', 98 );
 
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
+
+// Register footer nav menu
+register_nav_menus(
+    array(
+        'footer-menu' => esc_html__( 'Footer - Middle', 'wcss' ),
+    )
+);
