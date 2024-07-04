@@ -357,3 +357,14 @@ function remove_catalog_ordering() {
 	}
 }
 add_filter('woocommerce_before_shop_loop', 'remove_catalog_ordering');
+
+// remove compare from workshop products
+function no_compare_button($html, $post_id, $checked) {
+    if (is_product_category('workshops')) {
+		// empty string to prevent button from diplaying
+        return '';
+    }
+    return $html;
+}
+// 4th param '(3)' is # of accepted args
+add_filter('woocommerce_products_compare_compare_button', 'no_compare_button', 10, 3);
