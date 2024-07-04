@@ -21,9 +21,9 @@
         </div>
 
         <div class="store-info">
-			<p>123 Sesame Street</p>
+			<p>4325 Northlands Blvd</p>
             <p>British Columbia, Canada</p>
-            <p>A1B 2C3</p>
+            <p>V0N 1B0</p>
 		</div>
 
         <nav id="footer-navigation" class="footer-navigation">

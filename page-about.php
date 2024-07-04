@@ -22,10 +22,7 @@ get_header();
 			the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<header class="entry-header">
-					<h1>About Us</h1>
-				</header>
+				<h1>About Us</h1>
 				<div class="entry-content">
 				<?php the_post_thumbnail('large')?>
 

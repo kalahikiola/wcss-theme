@@ -47,7 +47,6 @@ get_header();
 					<h2>Some of Our Workshops</h2><?php
 				while ($query->have_posts()) {
 					$query->the_post();
-					global $product;
 					?>
 					<article>
 						<a href="<?php the_permalink(); ?>">
