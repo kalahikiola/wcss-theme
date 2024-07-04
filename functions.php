@@ -321,6 +321,7 @@ function display_calendar() {
 		 ?> <section class='calendar'> <?php
             while ($query->have_posts()) {
                 $query->the_post();
+				the_post_thumbnail();
 				the_content();
             }
             wp_reset_postdata();
