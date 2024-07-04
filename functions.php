@@ -328,3 +328,9 @@ function display_calendar() {
     }
 }
 add_action('woocommerce_shop_loop_header', 'display_calendar');
+
+register_nav_menus(
+    array(
+        'footer-menu' => esc_html__( 'Footer - Middle', 'wcss' ),
+    )
+);
