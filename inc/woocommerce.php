@@ -225,3 +225,166 @@ if ( ! function_exists( 'wcss_theme_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+// Remove breadcrumbs
+remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20);
+
+// Add categories to top of shop pages
+function add_category_links() {
+    if ( ( is_shop() || is_product_category() ) && !is_product_category( 'workshops' ) ) {
+        $product_categories = array("camping", "climbing", "snow");
+
+        echo '<section class="category-links-section">';
+        foreach( $product_categories as $category ) {
+
+            $term = get_term_by( 'slug', sanitize_title( $category ), 'product_cat' );
+            $term_link = get_term_link( $term, 'product_cat' );
+        
+            echo '<article class="category-link">';
+
+            echo '<a href="' . $term_link . '">';
+            echo $term->name;
+            woocommerce_subcategory_thumbnail( $term );
+            echo '</a>';
+
+            echo '</article>';
+        }
+        echo '</section>';
+    }
+}
+add_action( 'woocommerce_shop_loop_header', 'add_category_links', 9);
+
+// Add testimonials to workshop page
+function testimonials_workshop() {
+
+    if ( is_product_category( 'workshops' ) ) {
+        echo '<section class="testimonials">';
+            $args = array(
+                'post_type'      => 'wcss-testimonial',
+                'posts_per_page' => 3
+            );
+
+            $query = new WP_Query( $args );
+
+            if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) { $query->the_post();
+                        the_content();
+                    }
+                wp_reset_postdata();
+            }
+        echo '</section>';
+    }
+
+}
+add_action( 'woocommerce_after_main_content', 'testimonials_workshop', 9 );
+
+
+// Add instructors to workshop page
+function instructors_workshop() {
+    if (is_product_category('workshops')) {
+        echo '<section class="instructors">';
+		echo '<h2>Meet our Instructors</h2>';
+        
+        $args = array(
+            'post_type'      => 'wcss-instructors',
+            'posts_per_page' => -1 
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                ?>
+                <article>
+                    <?php the_post_thumbnail(); ?>
+                    <h3><?php the_title(); ?></h3>
+                    <?php
+                    if (function_exists('get_field')) { 
+                        if (get_field('bio')) {
+                            ?>
+                            <p><?php the_field('bio'); ?></p>
+                            <?php
+                        }
+                    }
+                    ?>
+                </article>
+                <?php
+            }
+            wp_reset_postdata();
+        }
+        echo '</section>';
+    }
+}
+add_action('woocommerce_after_main_content', 'instructors_workshop', 9);
+
+
+// Remove SKU from single product 
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
+// display Calendar on workshops
+function display_calendar() {
+    if (is_product_category('workshops')) {
+
+		$query = new WP_Query( array( 'page_id' => 285 ) );
+
+        if ($query->have_posts()) {
+		 ?> <section class='calendar'> <?php
+            while ($query->have_posts()) {
+                $query->the_post();
+				the_post_thumbnail();
+				the_content();
+            }
+            wp_reset_postdata();
+        }
+        ?> </section> <?php
+    }
+}
+add_action('woocommerce_shop_loop_header', 'display_calendar');
+
+// display upcoming workshops header on Workshops page
+function upcoming_workshops() {
+    if (is_product_category('workshops')) {
+
+		?><h2>Upcoming Workshops</h2><?php
+    }
+}
+add_action('woocommerce_shop_loop_header', 'upcoming_workshops');
+
+
+// Remove results from product categories 
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
+// Remove sorting on workshop page
+function remove_catalog_ordering() {
+	if (is_product_category('workshops')) {
+	remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+	}
+}
+add_filter('woocommerce_before_shop_loop', 'remove_catalog_ordering');
+
+// remove compare from workshop products
+function no_compare_button($html) {
+	global $woocommerce_loop;
+	global $product;
+    if (is_product_category('workshops') || is_product() && has_term( 'workshops', 'product_cat', $product->get_id() ) ) {
+		// empty string to prevent button from diplaying
+        return '';
+    }
+    return $html;
+}
+add_filter('woocommerce_products_compare_compare_button', 'no_compare_button', 10);
+
+// Remove Single Product Description heading
+add_filter('woocommerce_product_description_heading', '__return_null');
+
+// remove tabs from single product description but keep the content
+function remove_woocommerce_product_tabs( $tabs ) {
+	unset( $tabs['description'] );
+	unset( $tabs['reviews'] );
+	unset( $tabs['additional_information'] );
+	return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'remove_woocommerce_product_tabs', 98 );
+
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
