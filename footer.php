@@ -21,9 +21,13 @@
         </div>
 
         <div class="store-info">
-			<p>4325 Northlands Blvd</p>
-            <p>British Columbia, Canada</p>
-            <p>V0N 1B0</p>
+            <?php 
+            if ( function_exists ( 'get_field' ) ) {
+                if(get_field('address', 16)){
+                    ?><address><p><?php the_field('address', 16) ?></p></address><?php
+                }
+            }
+            ?>
 		</div>
 
         <nav id="footer-navigation" class="footer-navigation">

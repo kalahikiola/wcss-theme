@@ -61,6 +61,7 @@ get_header();
 				</section>
 
 				<section class="testimonials">
+                <h2>What Our Customers Say</h2> // Temp. Can change or delete
 				<?php
 				$args = array(
 				    'post_type'      => 'wcss-testimonial',
