@@ -50,7 +50,8 @@ function wcss_theme_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'wcss-theme' ),
-            'footer-menu' => esc_html__( 'Footer - Middle', 'wcss' ),
+            'header-right' => esc_html__( 'Header - Right', 'wcss-theme' ),
+            'footer-menu' => esc_html__( 'Footer - Middle', 'wcss-theme' ),
 		)
 	);
 

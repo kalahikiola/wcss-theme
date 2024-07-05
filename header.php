@@ -28,7 +28,6 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
 			$wcss_theme_description = get_bloginfo( 'description', 'display' );
 			if ( $wcss_theme_description || is_customize_preview() ) :
 				?>
@@ -43,6 +42,15 @@
 				array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
+				)
+			);
+
+            the_custom_logo();
+
+            wp_nav_menu(
+				array(
+					'theme_location' => 'header-right',
+					'menu_id'        => 'header-right',
 				)
 			);
 			?>
