@@ -5,6 +5,61 @@
 	margin-right: auto;
 }
 
+@mixin reset {
+    margin: 0;
+    padding: 0;
+}
+
+// Set width and height to one value
+@mixin box($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// Flex mixins
+///////////////////////////
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+  
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-column {
+    @include flex-center;
+    flex-direction: column;
+}
+
+// Media Queries
+////////////////////////////
+@mixin phone {
+    @media only screen and (min-width: $phone) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: $tablet) {
+        @content;
+    }
+}
+  
+@mixin large {
+    @media only screen and (min-width: $large) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media only screen and (min-width: $desktop) {
+        @content;
+    }
+}
+
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
