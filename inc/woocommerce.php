@@ -234,22 +234,19 @@ function add_category_links() {
     if ( ( is_shop() || is_product_category() ) && !is_product_category( 'workshops' ) ) {
         $product_categories = array("camping", "climbing", "snow");
 
-        echo '<section class="category-links-section">';
+        echo '<nav class="category-links-section">';
         foreach( $product_categories as $category ) {
 
             $term = get_term_by( 'slug', sanitize_title( $category ), 'product_cat' );
             $term_link = get_term_link( $term, 'product_cat' );
-        
-            echo '<article class="category-link">';
 
-            echo '<a href="' . $term_link . '">';
+            echo '<a class="category-link" href="' . $term_link . '">';
             echo $term->name;
             woocommerce_subcategory_thumbnail( $term );
             echo '</a>';
-
-            echo '</article>';
+            
         }
-        echo '</section>';
+        echo '</nav>';
     }
 }
 add_action( 'woocommerce_shop_loop_header', 'add_category_links', 9);
