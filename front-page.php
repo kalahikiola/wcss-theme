@@ -22,11 +22,7 @@ get_header();
 			the_post();
 
 			the_content();
-			?>
 
-
-			<section class="featured-workshops">
-			<?php
 			$category_id = 18;
 
 			$args = array(
@@ -44,25 +40,25 @@ get_header();
 			$query = new WP_Query($args);
 
 			if ($query->have_posts()) { ?>
-					<h2>Some of Our Workshops</h2><?php
-				while ($query->have_posts()) {
-					$query->the_post();
-					global $product;
-					?>
-					<article>
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail('medium'); ?>
-							<h3><?php the_title();?></h3>
-						</a>
-					</article>
-					<?php
-					}
-				wp_reset_postdata();
-				} ?>
-				</section>
+                <section class="featured-workshops">
+                    <h2>Some of Our Workshops</h2><?php
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        ?>
+                        <article>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_post_thumbnail('medium'); ?>
+                                <h3><?php the_title();?></h3>
+                            </a>
+                        </article>
+                        <?php
+                    }
+                    wp_reset_postdata();
+                    ?>
+                </section>
+                <?php
+			}
 
-				<section class="testimonials">
-				<?php
 				$args = array(
 				    'post_type'      => 'wcss-testimonial',
 				    'posts_per_page' => 3
@@ -71,15 +67,16 @@ get_header();
 				$query = new WP_Query( $args );
 
 				if ( $query->have_posts() ) { ?>
-				        <?php while ( $query->have_posts() ) { $query->the_post(); ?>
-				             <?php the_content(); ?>
-				        <?php } ?>
-				    <?php
-				    wp_reset_postdata();
-					}
-				?>
-				</section>
-				<?php
+                    <section class="testimonials">
+                        <h2>What Our Customers Say</h2>
+                        <?php
+                        while ( $query->have_posts() ) { $query->the_post();
+                            the_content();
+                        }
+                        wp_reset_postdata();
+                        ?>
+                    </section> <?php
+				}
 		endwhile; // End of the loop.
 		?>
 

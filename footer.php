@@ -21,9 +21,13 @@
         </div>
 
         <div class="store-info">
-			<p>123 Sesame Street</p>
-            <p>British Columbia, Canada</p>
-            <p>A1B 2C3</p>
+            <?php 
+            if ( function_exists ( 'get_field' ) ) {
+                if(get_field('address', 16)){
+                    ?><address><p><?php the_field('address', 16) ?></p></address><?php
+                }
+            }
+            ?>
 		</div>
 
         <nav id="footer-navigation" class="footer-navigation">

@@ -22,10 +22,8 @@ get_header();
 			the_post();?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<h1><?php the_title() ?></h1>
 
-				<header class="entry-header">
-					<h1>Contact Us</h1>
-				</header>
 				<div class="entry-content">
 
 					<?php if ( function_exists ( 'get_field' ) ) {

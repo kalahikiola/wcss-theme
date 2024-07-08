@@ -22,10 +22,7 @@ get_header();
 			the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<header class="entry-header">
-					<h1>About Us</h1>
-				</header>
+				<h1><?php the_title() ?></h1>
 				<div class="entry-content">
 				<?php the_post_thumbnail('large')?>
 
@@ -34,6 +31,14 @@ get_header();
 							?><p><?php the_field('about_us')?></p><?php
 						}
 					}?>
+
+					<?php 
+					$location = get_field('map_location');
+					if( $location ): ?>
+						<div class="acf-map" data-zoom="16">
+							<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+						</div>
+					<?php endif; ?>
 				</div>
 
 	 		</article>
