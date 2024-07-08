@@ -1,6 +1,13 @@
 .main-navigation {
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	width: 100%;
+
+	.custom-logo {
+		height: 6rem;
+		width: 6rem;
+	}
 
 	ul {
 		display: none;

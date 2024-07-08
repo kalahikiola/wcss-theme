@@ -36,7 +36,6 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wcss-theme' ); ?></button>
 			<?php
 			wp_nav_menu(
 				array(
@@ -44,8 +43,8 @@
 					'menu_id'        => 'primary-menu',
 				)
 			);
-
-            the_custom_logo();
+			 the_custom_logo(); ?>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wcss-theme' ); ?></button> <?php
 
             wp_nav_menu(
 				array(

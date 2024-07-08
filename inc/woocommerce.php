@@ -234,22 +234,19 @@ function add_category_links() {
     if ( ( is_shop() || is_product_category() ) && !is_product_category( 'workshops' ) ) {
         $product_categories = array("camping", "climbing", "snow");
 
-        echo '<section class="category-links-section">';
+        echo '<nav class="category-links-section">';
         foreach( $product_categories as $category ) {
 
             $term = get_term_by( 'slug', sanitize_title( $category ), 'product_cat' );
             $term_link = get_term_link( $term, 'product_cat' );
-        
-            echo '<article class="category-link">';
 
-            echo '<a href="' . $term_link . '">';
+            echo '<a class="category-link" href="' . $term_link . '">';
             echo $term->name;
             woocommerce_subcategory_thumbnail( $term );
             echo '</a>';
-
-            echo '</article>';
+            
         }
-        echo '</section>';
+        echo '</nav>';
     }
 }
 add_action( 'woocommerce_shop_loop_header', 'add_category_links', 9);
@@ -388,3 +385,5 @@ function remove_woocommerce_product_tabs( $tabs ) {
 add_filter( 'woocommerce_product_tabs', 'remove_woocommerce_product_tabs', 98 );
 
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
+add_action( 'woocommerce_after_single_product_summary', 'comments_template' );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab' );
