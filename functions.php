@@ -149,7 +149,7 @@ function wcss_theme_scripts() {
 		null
 		);
 		wp_enqueue_script(
-		'Google-maps-api',
+		'google-maps-api',
 		'https://maps.googleapis.com/maps/api/js?key=AIzaSyBA1pHxJorUPSSXAN5qTMmXIb-MEV52s0w&c&loading=async&
 		callback=Function.prototype',
 		null,
