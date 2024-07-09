@@ -1,0 +1,79 @@
+// Home Page Testimonials
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 10px;
+    background-color: #474747;
+    @include large {
+        flex-wrap: wrap;
+        gap: 10px;
+        height: 100vh;
+    }
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        color: $color_white;
+        font-family: $font__body;
+        @include tablet {
+            font-size: 1.75rem;
+        }
+        @include large {
+            font-size: 2rem;
+            margin-top: 3rem;
+        }
+        @include desktop {
+            font-size: 2.5rem;
+            margin-top: 6rem;
+        }
+    }
+
+    .wp-block-pullquote {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+
+        blockquote {
+            padding: 20px;
+            margin: 0 10px;
+            font-family: $font__body;
+            color: $color_white;
+
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+                @include tablet {
+                    font-size: 1rem;
+                }
+                @include large {
+                    font-size: 1.25rem;
+                }
+            }
+
+            cite {
+                display: block;
+                text-align: right;
+                right: 25px;
+                margin-top: 10px;
+                font-style: italic;
+            }
+        }
+    }
+
+    @include large {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        .wp-block-pullquote {
+            flex: 1;
+            max-width: 30%;
+        }
+    }
+}
+
+// Related Products
+
