@@ -1,5 +1,40 @@
 .site-footer {
+    @include flex-center-column;
+
+    @include large {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     .custom-logo {
         @include box(6rem);
+    }
+
+    .store-info {
+        @include flex-center-column;
+        
+        @include large {
+            flex-direction: row;
+            
+            address {
+                max-width: 12.5rem;
+            }
+        }
+    }
+
+
+    .footer-navigation {
+        ul {
+            @include reset;
+
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            li {
+                padding: .5rem;
+            }
+        }
     }
 }
