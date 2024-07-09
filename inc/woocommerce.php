@@ -337,15 +337,16 @@ function display_calendar() {
 		$query = new WP_Query( array( 'page_id' => 285 ) );
 
         if ($query->have_posts()) {
-		 ?> <section class='calendar'> 
-			<h1 class="workshops-header"><?php echo esc_html($category->name); ?></h1><?php
-            while ($query->have_posts()) {
-                $query->the_post();
-				the_post_thumbnail();
+			$query->the_post();?>
+			<div class="workshops-hero">
+				<h1 class="workshops-header"><?php echo esc_html($category->name); ?></h1>
+				<?php the_post_thumbnail(); ?>
+			</div>
+		  <section class='calendar'><?php
 				the_content();
-            }
+        	}
             wp_reset_postdata();
-        }
+
         ?> </section> <?php
     }
 }
