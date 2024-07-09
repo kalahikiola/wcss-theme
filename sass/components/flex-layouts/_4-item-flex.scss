@@ -1,0 +1,22 @@
+.featured-workshops {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    h2 {
+        width: 100%;
+        display: block;
+        text-align: center;
+
+    }
+    article {
+        flex: 0 1 calc(50% - 0.5rem);
+        
+        @include tablet {
+            flex: 0 1 calc(22% - 0.5rem);
+        }
+    }
+}
