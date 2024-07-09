@@ -47,3 +47,44 @@
         }
     }
 }
+
+// Workshops calendar
+
+.calendar {
+
+    .wp-block-woocommerce-bookings-availability-calendar-block {
+
+        max-width: 62.5rem;
+        margin: 0 auto;
+
+        .wc-bookings-availability-calendar.wc-bookings-availability-calendar-5-rows-month {
+            border: 3px solid $color_dark_green;
+        }
+
+        .wc-bookings-availability-calendar-header-item {
+            background-color: $color_dark_green;
+            color: $color_white;
+        }
+
+        .wc-bookings-availability-header .wc-bookings-availability-date, .wc-bookings-availability-item-subheader span{
+            color: $color_dark_green;
+            font-family: $font__headings;
+        }
+
+        .woocommerce-error.notice.notice-empty {
+            background-color: transparent;
+        }
+
+        .wc-bookings-availability-event-table {
+            padding: 0;
+        }
+
+        .wc-bookings-availability-item {
+            text-align: center;
+        }
+
+        .wc-bookings-availability-item-body {
+            flex-direction: column;
+        }
+    }
+}
