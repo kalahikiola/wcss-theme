@@ -49,13 +49,28 @@
 }
 
 // Workshops calendar
-.calendar {
+.workshops-hero {
+    position: relative;
+    text-align: center;
 
-	.attachment-post-thumbnail {
-		height: 26.875rem;
-		object-fit: cover;
-		
-	}
+    .workshops-header {
+        @include reset;
+        width: 18.75rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color_white;
+        font-size: 2.625rem;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .attachment-post-thumbnail {
+        height: 26.875rem;
+        object-fit: cover;   
+    }
+}
+
+.calendar {
 
     .wp-block-woocommerce-bookings-availability-calendar-block {
 
