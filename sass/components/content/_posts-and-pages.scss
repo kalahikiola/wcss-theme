@@ -21,3 +21,29 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+// About Page styles
+.post-14 {
+    @include flex-center-column;
+    max-width: 75rem;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+    }
+    .entry-content {
+    @include flex-center-column;
+
+    @include large {
+        flex-direction: row;
+        gap: 3rem;
+
+            img {
+                width: 28.125rem;
+                @include desktop {
+                    width: 35rem;
+                }
+            }
+        }
+    }
+}
