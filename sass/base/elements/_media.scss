@@ -10,6 +10,22 @@ img {
 	max-width: 100%; // Adhere to container width.
 }
 
+// Workshops hero img
+.calendar {
+	// position: relative;
+	// .workshops-header {
+	// 	position: absolute;
+    // 	top: 18%;
+    // 	left: 50%;
+    // 	transform: translate(-50%, -50%);
+	// }
+	.attachment-post-thumbnail {
+		height: 26.875rem;
+		object-fit: cover;
+		
+	}
+}
+
 figure {
 	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
 }
