@@ -4,9 +4,9 @@
 	justify-content: space-between;
 	width: 100%;
 
-	.custom-logo {
-		height: 6rem;
-		width: 6rem;
+	.custom-logo-link {
+		height: 3.4375rem;
+		width: 3.4375rem;
 	}
 
 	ul {
@@ -58,10 +58,15 @@
 
 	li {
 		position: relative;
+        margin: 0 0.2rem;
 
 		&:hover > a,
 		&.focus > a {
 		}
+
+        a {
+            height: 1.5rem;
+        }
 	}
 
 	a {
@@ -74,6 +79,72 @@
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 	}
+}
+
+@include phone {
+    .main-navigation {
+    
+        .custom-logo-link {
+            height: 5rem;
+            width: 5rem;
+        }
+    
+        ul {
+    
+            li {
+                margin: 0 0.3rem;
+            }
+
+        }
+
+    }
+}
+
+@include tablet  {
+    .main-navigation {
+    
+        .custom-logo-link {
+            height: 6rem;
+            width: 6rem;
+        }
+    
+        ul {
+    
+            li {
+                margin: 0 0.5rem;
+            }
+
+        }
+
+    }
+}
+
+@include large {
+    .main-navigation {
+    
+        ul {
+    
+            li {
+                margin: 0 0.8rem;
+            }
+
+        }
+
+    }
+}
+
+@include large {
+    .main-navigation {
+    
+        ul {
+    
+            li {
+                margin: 0 1.5rem;
+            }
+
+        }
+
+    }
 }
 
 /* Small menu. */
