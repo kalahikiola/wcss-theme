@@ -20,7 +20,19 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
+		?>	<div class="home-hero"> <?php
+			 the_post_thumbnail();
+			 if (function_exists('get_field')) { 
+				if (get_field('site_title')) {
+					?>
+					<h1><?php the_field('site_title'); ?></h1>
+					<?php
+				}
+			}
+			?>
+			
+			</div>	
+		<?php
 			the_content();
 
 			$category_id = 18;
