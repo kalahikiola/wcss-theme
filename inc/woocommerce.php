@@ -319,14 +319,26 @@ add_action('woocommerce_after_main_content', 'instructors_workshop', 9);
 // Remove SKU from single product 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
+// Remove Workshops default title
+
+function remove_workshops_title() {
+	if ( is_product_category( 'workshops' ) ) {
+		add_filter( 'woocommerce_show_page_title', '__return_false' );
+    }
+}
+add_action( 'wp', 'remove_workshops_title' );
+
 // display Calendar on workshops
 function display_calendar() {
     if (is_product_category('workshops')) {
 
+		$category = get_queried_object();
+
 		$query = new WP_Query( array( 'page_id' => 285 ) );
 
         if ($query->have_posts()) {
-		 ?> <section class='calendar'> <?php
+		 ?> <section class='calendar'> 
+			<h1 class="workshops-header"><?php echo esc_html($category->name); ?></h1><?php
             while ($query->have_posts()) {
                 $query->the_post();
 				the_post_thumbnail();
