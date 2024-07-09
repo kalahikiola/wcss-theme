@@ -32,6 +32,7 @@ get_header();
 						}
 					}?>
 
+				</div>
 					<?php 
 					$location = get_field('map_location');
 					if( $location ): ?>
@@ -39,7 +40,6 @@ get_header();
 							<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
 						</div>
 					<?php endif; ?>
-				</div>
 
 	 		</article>
 		<?php
