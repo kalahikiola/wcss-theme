@@ -12,19 +12,21 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-        <div class="footer-logo">
-            <?php 
-            if ( function_exists( 'the_custom_logo' ) ) {
-                the_custom_logo();
-            }
-            ?>
-        </div>
-
+        
         <div class="store-info">
+            <div class="footer-logo">
+                <?php 
+                if ( function_exists( 'the_custom_logo' ) ) {
+                    the_custom_logo();
+                }
+                ?>
+            </div>
             <?php 
             if ( function_exists ( 'get_field' ) ) {
-                if(get_field('address', 16)){
-                    ?><address><p><?php the_field('address', 16) ?></p></address><?php
+                if(get_field('address', 16)){?>
+                    <div>
+                        <address><p><?php the_field('address', 16) ?></p></address>
+                    </div><?php
                 }
             }
             ?>
