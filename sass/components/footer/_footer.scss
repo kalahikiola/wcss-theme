@@ -26,6 +26,7 @@
     .footer-navigation {
         ul {
             @include reset;
+            text-align: center;
 
             @include tablet {
                 display: flex;
