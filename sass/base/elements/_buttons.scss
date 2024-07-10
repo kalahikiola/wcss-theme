@@ -1,40 +1,32 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
-
-	&:hover {
-		border-color: $color__border-button-hover;
-	}
-
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-	}
-}
-
+input[type="submit"],
 .wp-block-button__link {
+
+	padding: .5rem;
 	border-radius: 0px;
 	color: #ffffff;
 	background-color: $color_black;
 	border: 1px solid $color_black;
+	cursor: pointer;
   
 	&:hover {
-	  color: #ffffff; /* Change text color on hover */
-	  background-color: $color_dark_green; /* Change background color on hover */
+	  color: #ffffff;
+	  background-color: $color_dark_green;
 	  border: 1px solid $color_dark_green;
-	  transition: all 0.3s ease-in; /* Smooth transition for the hover effect */
+	  transition: all 0.3s ease-in;
 	}
   
 	&:focus {
-	  outline: 2px solid #000000; /* Outline for accessibility */
-	  outline-offset: 4px; /* Space between the outline and the button */
+	  outline: 2px solid #000000;
+	  outline-offset: 4px;
 	}
-  }
+}
+
+.wp-block-button__link {
+	&:visited {
+		color: $color_white;
+		background-color: $color_dark_green;
+	}
+}

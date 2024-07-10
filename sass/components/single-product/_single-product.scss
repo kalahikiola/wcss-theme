@@ -1,0 +1,42 @@
+
+.single-product {
+    
+    @include tablet {
+        .product {
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+    .woocommerce-product-gallery {
+        grid-column: 1 / 2;
+        grid-row: 1;
+        max-width: 100%;
+    }
+
+    .summary.entry-summary {
+            padding-left: 2rem;
+            grid-column: 2 / 3;
+            grid-row: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+        .single_add_to_cart_button {
+            margin-top: 1rem;
+        }
+
+        .woocommerce-noreviews{
+            background-color: transparent;
+        }
+
+        p strong{
+            color: $color_dark_green;
+            font-family: $font__headings;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0 1rem;
+        }
+    }
