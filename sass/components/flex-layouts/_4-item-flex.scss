@@ -5,6 +5,7 @@ main {
     .featured-workshops {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
 
         h2 {
             width: 100%;
@@ -15,6 +16,7 @@ main {
 
         @include tablet {
             grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
         }
 
         li {
