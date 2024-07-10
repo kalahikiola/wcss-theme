@@ -231,7 +231,6 @@ function my_acf_google_map_api( $api ){
 
 
 // Lower Yoast SEO Metabox location
-	
 function yoast_to_bottom(){
    return 'low';
 }
