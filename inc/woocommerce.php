@@ -313,7 +313,7 @@ function instructors_workshop() {
         echo '</section>';
     }
 }
-add_action('woocommerce_after_main_content', 'instructors_workshop', 9);
+add_action('woocommerce_after_main_content', 'instructors_workshop', 8);
 
 
 // Remove SKU from single product 
