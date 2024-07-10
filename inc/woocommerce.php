@@ -343,6 +343,13 @@ function display_calendar() {
 				<?php the_post_thumbnail(); ?>
 			</div>
 		  <section class='calendar'><?php
+		  if (function_exists('get_field')) { 
+			if (get_field('workshop_overview')) {
+				?>
+				<p class="workshop-overview"><?php the_field('workshop_overview'); ?></p>
+				<?php
+			}
+		}
 				the_content();
         	}
             wp_reset_postdata();
