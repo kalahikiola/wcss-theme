@@ -1,10 +1,11 @@
-// // * --- WORKSHOPS --- * \\
+// // * --- Home && WORKSHOPS --- * \\
 main {
     .products,
     .instructors,
     .featured-workshops {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        // grid-template-rows: 50px 1fr;
         gap: 0.5rem;
 
         h2 {
@@ -14,13 +15,25 @@ main {
             grid-column: 1 / -1;
         }
 
+        h3 {
+            text-align: center
+        }
+
         @include tablet {
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
         }
 
         li {
-            min-width: 150px;
+            min-width: 200px;
+        }
+
+        article {
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            flex-direction: column;
         }
     }
 }
+
