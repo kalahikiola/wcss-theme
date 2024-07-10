@@ -1,0 +1,29 @@
+.category-links-section {
+
+    //position: relative;
+    display: flex;
+    justify-content: space-evenly;
+
+    .category-link {
+
+        position: relative;
+        display: inline-block;
+
+        h2 {
+            @include reset;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: $color_white;
+        }
+
+        img {
+            //width: 100%;
+            display: block;
+        }
+
+    }
+
+}

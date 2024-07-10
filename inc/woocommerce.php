@@ -241,8 +241,8 @@ function add_category_links() {
             $term_link = get_term_link( $term, 'product_cat' );
 
             echo '<a class="category-link" href="' . $term_link . '">';
-            echo $term->name;
             woocommerce_subcategory_thumbnail( $term );
+            echo '<h2>' . $term->name . '</h2>';
             echo '</a>';
             
         }
