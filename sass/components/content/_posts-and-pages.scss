@@ -52,6 +52,14 @@
 
 .calendar {
 
+    .workshop-overview {
+        max-width: 45rem;
+        margin: 1rem auto;
+
+        @include large {
+            font-size: 1.2rem;
+        }
+    }
     .wp-block-woocommerce-bookings-availability-calendar-block {
 
         max-width: 62.5rem;
