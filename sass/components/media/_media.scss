@@ -26,7 +26,11 @@
         transform: translate(-50%, -50%);
         color: $color_white;
         font-size: 2.625rem;
-        background-color: rgba(0, 0, 0, 0.5);
+        filter: drop-shadow(0 0 0.75rem rgb(22, 22, 22));
+
+        @include large {
+            font-size: 3rem;
+        }
     }
     .attachment-post-thumbnail {
         height: 26.875rem;

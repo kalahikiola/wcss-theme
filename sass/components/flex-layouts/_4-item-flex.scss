@@ -32,6 +32,10 @@ main {
             flex-direction: column;
         }
 
+        .attachment-woocommerce_thumbnail {
+            margin: 0 auto;
+        }
+
         @include large-mobile {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
