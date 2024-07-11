@@ -39,6 +39,8 @@ do_action( 'woocommerce_shop_loop_header' );
 
 if ( woocommerce_product_loop() ) {
 
+    echo '<section class="4-column-flex">';
+
 	/**
 	 * Hook: woocommerce_before_shop_loop.
 	 *
@@ -53,7 +55,6 @@ if ( woocommerce_product_loop() ) {
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
 			the_post();
-
 			/**
 			 * Hook: woocommerce_shop_loop.
 			 */
@@ -79,6 +80,8 @@ if ( woocommerce_product_loop() ) {
 	 */
 	do_action( 'woocommerce_no_products_found' );
 }
+
+echo '</section>';
 
 /**
  * Hook: woocommerce_after_main_content.
