@@ -74,6 +74,10 @@
 // Related Products
 
 .related.products{
+
+    .attachment-woocommerce_thumbnail {
+        margin: 0 auto;
+    }
     
     ul {
     @include flex-center-column;
