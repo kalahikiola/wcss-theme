@@ -1,12 +1,14 @@
 // // * --- Home && WORKSHOPS --- * \\
 main {
-    .columns-4,
+    .upcoming-workshops {
+        text-align: center;
+    }
+
+    .products.columns-4,
     .instructors,
     .featured-workshops {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        // grid-template-rows: 50px 1fr;
-        gap: 0.5rem;
+        @include flex-center-column; 
+        align-items: baseline;
 
         h2 {
             width: 100%;
@@ -16,16 +18,11 @@ main {
         }
 
         h3 {
-            text-align: center
-        }
-
-        @include tablet {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
+            text-align: center;
         }
 
         li {
-            // min-width: 200px;
+            min-width: 100%;
         }
 
         article {
@@ -34,6 +31,17 @@ main {
             align-items: center;
             flex-direction: column;
         }
+
+        @include large-mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
     }
 }
-

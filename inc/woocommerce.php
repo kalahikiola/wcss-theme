@@ -363,7 +363,7 @@ add_action('woocommerce_shop_loop_header', 'display_calendar');
 function upcoming_workshops() {
     if (is_product_category('workshops')) {
 
-		?><h2>Upcoming Workshops</h2><?php
+		?><h2 class="upcoming-workshops">Upcoming Workshops</h2><?php
     }
 }
 add_action('woocommerce_shop_loop_header', 'upcoming_workshops');
