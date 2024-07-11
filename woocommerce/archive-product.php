@@ -39,7 +39,9 @@ do_action( 'woocommerce_shop_loop_header' );
 
 if ( woocommerce_product_loop() ) {
 
-    echo '<section class="4-column-flex">';
+    if ( is_product_category('workshops') ) {
+        echo '<section class="workshops-flex">';
+    }
 
 	/**
 	 * Hook: woocommerce_before_shop_loop.
@@ -81,7 +83,9 @@ if ( woocommerce_product_loop() ) {
 	do_action( 'woocommerce_no_products_found' );
 }
 
-echo '</section>';
+if ( is_product_category('workshops') ) {
+    echo '</section>';
+}
 
 /**
  * Hook: woocommerce_after_main_content.
