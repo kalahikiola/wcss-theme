@@ -7,9 +7,8 @@ main {
     .products.columns-4,
     .instructors,
     .featured-workshops {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+        @include flex-center-column; 
+        align-items: baseline;
 
         h2 {
             width: 100%;
@@ -18,15 +17,8 @@ main {
             grid-column: 1 / -1;
         }
 
-
-
         h3 {
             text-align: center;
-        }
-
-        @include tablet {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
         }
 
         li {
@@ -39,6 +31,17 @@ main {
             align-items: center;
             flex-direction: column;
         }
+
+        @include large-mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
     }
 }
-
