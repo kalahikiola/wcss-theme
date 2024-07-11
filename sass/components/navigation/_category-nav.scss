@@ -2,7 +2,11 @@
 
     //position: relative;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100vw;
 
     .category-link {
 
@@ -17,13 +21,22 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: $color_white;
+            //mix-blend-mode: difference;
+            filter: drop-shadow(0 0 0.75rem rgb(22, 22, 22));
         }
 
         img {
             //width: 100%;
-            display: block;
+            //display: block;
         }
 
     }
 
+}
+
+@include phone {
+    .category-links-section {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 }
