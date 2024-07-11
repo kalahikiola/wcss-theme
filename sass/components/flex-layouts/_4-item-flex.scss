@@ -4,7 +4,7 @@ main {
         text-align: center;
     }
 
-    .workshops-flex,
+    .workshops-flex ul,
     .instructors,
     .featured-workshops {
         @include flex-center-column; 
