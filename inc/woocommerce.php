@@ -366,7 +366,7 @@ function upcoming_workshops() {
 		?><h2>Upcoming Workshops</h2><?php
     }
 }
-add_action('woocommerce_shop_loop_header', 'upcoming_workshops');
+add_action('woocommerce_before_shop_loop', 'upcoming_workshops');
 
 
 // Remove results from product categories 
