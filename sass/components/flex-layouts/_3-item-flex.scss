@@ -73,3 +73,24 @@
 
 // Related Products
 
+.related.products{
+    
+    ul {
+    @include flex-center-column;
+
+    @include tablet {
+        align-items: baseline;
+    }
+    
+    li, .price {
+        @include flex-center-column;
+    }
+    @include tablet {
+        flex-direction: row;
+    }
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
