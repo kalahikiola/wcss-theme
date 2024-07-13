@@ -82,9 +82,12 @@
     
     ul {
     @include flex-center-column;
+    max-width: 18.75rem;
+    margin: 0 auto;
 
     @include tablet {
-        align-items: baseline;
+        align-items: stretch;
+        max-width: 100%;
     }
     
     li, .price {
