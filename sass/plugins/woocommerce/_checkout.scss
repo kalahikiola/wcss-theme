@@ -19,3 +19,25 @@
 		}
 	}
 }
+
+
+        // styling the **cart** page
+// change 'change address' link color
+.wp-block-woocommerce-cart-order-summary-shipping-block.wc-block-components-totals-wrapper
+.wc-block-components-totals-shipping
+.wc-block-components-totals-item 
+.wc-block-components-totals-shipping__change-address__link {
+	color: black;
+	&:hover {
+		color: $color_dark_green;
+		text-decoration: none;
+	}
+}
+
+// remove green inner border on hover for 'add a coupon' dropdown
+.wp-block-woocommerce-cart-order-summary-block
+.wp-block-woocommerce-cart-order-summary-coupon-form-block.wc-block-components-totals-wrapper
+.wc-block-components-totals-coupon.wc-block-components-panel 
+.wc-block-components-panel__button:hover {
+	border: none;
+}
