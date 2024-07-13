@@ -8,7 +8,7 @@ main {
     .instructors,
     .featured-workshops {
         @include flex-center-column; 
-        align-items: baseline;
+        align-items: stretch;
 
         h2 {
             width: 100%;
@@ -36,16 +36,19 @@ main {
             margin: 0 auto;
         }
 
-        @include large-mobile {
+        @include phone {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0.5rem;
         }
 
-        @include tablet {
+        @include large {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
         }
+    }
+    .instructors article {
+        margin-bottom: 1rem;
     }
 }

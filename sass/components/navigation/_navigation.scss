@@ -185,3 +185,21 @@
 		flex: 1 0 50%;
 	}
 }
+
+// Product Page Numbers 
+
+.page-numbers {
+	display: flex;
+	font-size: 1.2rem;
+	justify-content: center;
+	margin: 0 auto;
+
+	li {
+		padding: .5rem;
+		justify-content: center;
+	} 
+
+	.current {
+		text-decoration: underline;
+	}
+}
