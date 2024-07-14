@@ -1,0 +1,54 @@
+// // * --- Home && WORKSHOPS --- * \\
+main {
+    .upcoming-workshops {
+        text-align: center;
+    }
+
+    .workshops-flex ul,
+    .instructors,
+    .featured-workshops {
+        @include flex-center-column; 
+        align-items: stretch;
+
+        h2 {
+            width: 100%;
+            display: block;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        li {
+            min-width: 100%;
+        }
+
+        article {
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .attachment-woocommerce_thumbnail {
+            margin: 0 auto;
+        }
+
+        @include phone {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        @include large {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+    }
+    .instructors article {
+        margin-bottom: 1rem;
+    }
+}

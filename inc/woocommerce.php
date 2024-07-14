@@ -20,8 +20,8 @@ function wcss_theme_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 150,
-			'single_image_width'    => 300,
+			'thumbnail_image_width' => 300,
+			'single_image_width'    => 400,
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
@@ -241,8 +241,8 @@ function add_category_links() {
             $term_link = get_term_link( $term, 'product_cat' );
 
             echo '<a class="category-link" href="' . $term_link . '">';
-            echo $term->name;
             woocommerce_subcategory_thumbnail( $term );
+            echo '<h2>' . $term->name . '</h2>';
             echo '</a>';
             
         }
@@ -313,27 +313,47 @@ function instructors_workshop() {
         echo '</section>';
     }
 }
-add_action('woocommerce_after_main_content', 'instructors_workshop', 9);
+add_action('woocommerce_after_main_content', 'instructors_workshop', 8);
 
 
 // Remove SKU from single product 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
+// Remove Workshops default title
+
+function remove_workshops_title() {
+	if ( is_product_category( 'workshops' ) ) {
+		add_filter( 'woocommerce_show_page_title', '__return_false' );
+    }
+}
+add_action( 'wp', 'remove_workshops_title' );
+
 // display Calendar on workshops
 function display_calendar() {
     if (is_product_category('workshops')) {
 
+		$category = get_queried_object();
+
 		$query = new WP_Query( array( 'page_id' => 285 ) );
 
         if ($query->have_posts()) {
-		 ?> <section class='calendar'> <?php
-            while ($query->have_posts()) {
-                $query->the_post();
-				the_post_thumbnail();
+			$query->the_post();?>
+			<div class="workshops-hero">
+				<h1 class="workshops-header"><?php echo esc_html($category->name); ?></h1>
+				<?php the_post_thumbnail(); ?>
+			</div>
+		  <section class='calendar'><?php
+		  if (function_exists('get_field')) { 
+			if (get_field('workshop_overview')) {
+				?>
+				<p class="workshop-overview"><?php the_field('workshop_overview'); ?></p>
+				<?php
+			}
+		}
 				the_content();
-            }
+        	}
             wp_reset_postdata();
-        }
+
         ?> </section> <?php
     }
 }
@@ -343,10 +363,10 @@ add_action('woocommerce_shop_loop_header', 'display_calendar');
 function upcoming_workshops() {
     if (is_product_category('workshops')) {
 
-		?><h2>Upcoming Workshops</h2><?php
+		?><h2 class="upcoming-workshops">Upcoming Workshops</h2><?php
     }
 }
-add_action('woocommerce_shop_loop_header', 'upcoming_workshops');
+add_action('woocommerce_before_shop_loop', 'upcoming_workshops');
 
 
 // Remove results from product categories 
@@ -385,5 +405,5 @@ function remove_woocommerce_product_tabs( $tabs ) {
 add_filter( 'woocommerce_product_tabs', 'remove_woocommerce_product_tabs', 98 );
 
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
-add_action( 'woocommerce_after_single_product_summary', 'comments_template' );
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab' );
+add_action( 'woocommerce_after_single_product_summary', 'comments_template' );

@@ -228,3 +228,10 @@ function my_acf_google_map_api( $api ){
 	return $api;
 	}
 	add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+
+// Lower Yoast SEO Metabox location
+function yoast_to_bottom(){
+   return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );

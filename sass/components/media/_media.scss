@@ -11,3 +11,49 @@
 .custom-logo-link {
 	display: inline-block;
 }
+
+// Hero Images
+.workshops-hero, .home-hero {
+    position: relative;
+    text-align: center;
+
+    h1 {
+        @include reset;
+        padding: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color_white;
+        font-size: 2.625rem;
+        filter: drop-shadow(0 0 0.75rem rgb(22, 22, 22));
+
+        @include large {
+            font-size: 3rem;
+        }
+    }
+    .attachment-post-thumbnail {
+        height: 26.875rem;
+        object-fit: cover;
+		
+		@include large {
+			height: 43.75rem;
+		}
+    }
+}
+
+.home-hero {
+    .cta-button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 8%;
+        background-color: $color_white;
+        color: $color_black;
+        font-weight: bold;
+
+        @include phone {
+            bottom: 15%;
+        }
+    }
+}

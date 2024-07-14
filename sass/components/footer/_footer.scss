@@ -1,5 +1,6 @@
 .site-footer {
     @include flex-center-column;
+    margin: 1rem;
 
     @include large {
         flex-direction: row;
@@ -26,6 +27,7 @@
     .footer-navigation {
         ul {
             @include reset;
+            text-align: center;
 
             @include tablet {
                 display: flex;

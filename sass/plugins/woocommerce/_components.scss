@@ -223,18 +223,18 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-success;
+	background-color: transparent;
 	clear: both;
 }
 
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-info;
+	background-color: transparent;
 }
 
 .woocommerce-error {
-	background-color: $woocommerce__color-error;
+	background-color: transparent;
 }
 
 .demo_store {
@@ -273,5 +273,16 @@ p.no-comments {
 				display: block;
 			}
 		}
+	}
+}
+
+// center headings on **compare product** page
+.woocommerce-products-compare-content.woocommerce table { 
+	thead tr th:first-child{
+		text-align: center;
+	}
+
+	tbody tr td {
+		text-align: center;
 	}
 }

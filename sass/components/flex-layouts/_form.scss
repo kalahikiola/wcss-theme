@@ -1,0 +1,40 @@
+
+.post-16.page.type-page.status-publish.hentry {
+    h1 {
+        text-align: center;
+    }
+    .entry-content {
+    @include large {
+        max-width: 75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+    }
+    .contact-info {
+        text-align: center;
+        @include large {
+        width: 70%;
+        }
+    }
+}
+
+    .entry-content 
+    .gf_browser_chrome.gform_wrapper.gform-theme.gform-theme--foundation.gform-theme--framework.gform-theme--orbital {
+        box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
+        padding: 1rem;
+        width: 100%;
+
+        form .gform_footer.top_label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input.gform_button.button {
+                background-color: $color_dark_green;
+            }
+        }
+    }
+}

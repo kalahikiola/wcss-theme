@@ -2,6 +2,14 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
+/* Category Nav
+--------------------------------------------- */
+@import "navigation/category-nav";
+
+/* 3 Item Flex
+--------------------------------------------- */
+@import "flex-layouts/3-item-flex";
+
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
@@ -14,6 +22,10 @@
 --------------------------------------------- */
 @import "widgets/widgets";
 
+/* Product-cards
+--------------------------------------------- */
+@import "product-cards/product-cards";
+
 /* Media
 --------------------------------------------- */
 @import "media/media";
@@ -21,6 +33,18 @@
 /* Captions
 --------------------------------------------- */
 @import "media/captions";
+
+/* Captions
+--------------------------------------------- */
+@import "single-product/single-product";
+
+/*a 4-item-flex
+--------------------------------------------- */
+@import "flex-layouts/4-item-flex";
+
+/* forms 
+--------------------------------------------- */
+@import "flex-layouts/form";
 
 /* Galleries
 --------------------------------------------- */

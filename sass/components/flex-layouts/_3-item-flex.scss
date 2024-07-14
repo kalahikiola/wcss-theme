@@ -1,0 +1,104 @@
+// Home Page Testimonials
+
+.testimonials {
+    @include flex-column;
+    align-items: center;
+    padding: 3.125rem .625rem;
+    margin-top: 1rem;
+    background-color: #474747;
+    min-width: 100%;
+    @include large {
+        flex-wrap: wrap;
+        gap: .625rem;
+    }
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        color: $color_white;
+        font-family: $font__body;
+        @include tablet {
+            font-size: 1.75rem;
+        }
+        @include large {
+            font-size: 2rem;
+        }
+        @include desktop {
+            font-size: 2.5rem;
+        }
+    }
+
+    .wp-block-pullquote {
+        width: 100%;
+        padding: 0;
+
+        blockquote {
+            padding: 1.25rem;
+            margin: 0 .625rem;
+            font-family: $font__body;
+            color: $color_white;
+
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+                @include tablet {
+                    font-size: 1rem;
+                }
+                @include large {
+                    font-size: 1.25rem;
+                }
+            }
+
+            cite {
+                display: block;
+                text-align: right;
+                right: 1.5625rem;
+                margin-top: .625rem;
+                font-style: italic;
+            }
+        }
+    }
+
+    @include large {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        .wp-block-pullquote {
+            flex: 1;
+            max-width: 30%;
+        }
+    }
+}
+
+// Related Products
+
+.related.products{
+
+    .attachment-woocommerce_thumbnail {
+        margin: 0 auto;
+    }
+    
+    ul {
+    @include flex-center-column;
+    max-width: 18.75rem;
+    margin: 0 auto;
+
+    @include tablet {
+        align-items: stretch;
+        max-width: 100%;
+    }
+    
+    li, .price {
+        @include flex-center-column;
+    }
+    @include tablet {
+        flex-direction: row;
+    }
+    }
+
+    h2 {
+        text-align: center;
+    }
+}

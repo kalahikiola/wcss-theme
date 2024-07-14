@@ -1,10 +1,15 @@
-.site {
-	display: grid;
-	grid-template-columns: ($size__site-sidebar) auto;
-	grid-template-areas:
-		"header header"
-		"sidebar main"
-		"footer footer";
+.post-type-archive-product .site,
+.term-camping .site,
+.term-climbing .site,
+.term-snow .site {
+    @include desktop {
+        display: grid;
+        grid-template-columns: $size__site-sidebar auto;
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+    }
 }
 
 .site-header {
