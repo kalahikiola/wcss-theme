@@ -11,6 +11,8 @@
             "sidebar main"
             "footer footer";
     }
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 .site-header {
@@ -20,6 +22,7 @@
 .site-main {
 	grid-area: main;
 	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+    margin: 0 auto;
 }
 
 .site-main .category-links-wrapper {
@@ -28,6 +31,7 @@
 
 .widget-area {
 	grid-area: sidebar;
+    // max-width: 25rem;
 }
 
 .site-footer {
