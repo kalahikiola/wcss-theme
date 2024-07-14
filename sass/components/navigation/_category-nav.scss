@@ -1,6 +1,11 @@
-.category-links-section {
+.category-links-wrapper {
+    grid-area: cat-nav;
+    display: grid;
+    width: 100%;
+}
 
-    //position: relative;
+.category-links-section {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,10 +14,8 @@
     width: 100%;
 
     .category-link {
-
         position: relative;
         display: inline-block;
-        //Hi
 
         h2 {
             @include reset;
@@ -27,8 +30,8 @@
         }
 
         img {
-            //width: 100%;
-            //display: block;
+            width: 100%;
+            display: block;
         }
 
     }

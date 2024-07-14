@@ -7,6 +7,7 @@
         grid-template-columns: $size__site-sidebar auto;
         grid-template-areas:
             "header header"
+            "cat-nav cat-nav"
             "sidebar main"
             "footer footer";
     }
@@ -19,6 +20,10 @@
 .site-main {
 	grid-area: main;
 	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+}
+
+.site-main .category-links-wrapper {
+    grid-area: cat-nav;
 }
 
 .widget-area {
