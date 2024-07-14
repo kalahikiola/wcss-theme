@@ -16,7 +16,7 @@
     .category-link {
         position: relative;
         display: inline-block;
-        flex: 1 1 125px;
+        // flex: 1 1 200px;
 
         h2 {
             @include reset;
@@ -32,8 +32,8 @@
 
         img {
             width: 100%;
-            max-width: 500px;
             display: block;
+            // max-width: 480px;
         }
 
     }
