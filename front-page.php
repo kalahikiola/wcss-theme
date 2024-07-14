@@ -26,6 +26,7 @@ get_header();
 				if (get_field('site_title')) {
 					?>
 					<h1><?php the_field('site_title'); ?></h1>
+					<a href="<?php echo esc_url(get_permalink(get_option('woocommerce_shop_page_id'))); ?>" class="cta-button">Shop Now</a>
 					<?php
 				}
 			}
