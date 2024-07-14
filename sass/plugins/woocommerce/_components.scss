@@ -230,11 +230,11 @@ p.no-comments {
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-info;
+	background-color: transparent;
 }
 
 .woocommerce-error {
-	background-color: $woocommerce__color-error;
+	background-color: transparent;
 }
 
 .demo_store {

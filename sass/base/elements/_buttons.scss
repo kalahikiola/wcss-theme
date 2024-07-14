@@ -3,7 +3,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .wp-block-button__link,
-.add_to_cart_button {
+.add_to_cart_button,
+.cta-button {
 
 	padding: .5rem;
 	border-radius: 0px;
@@ -25,9 +26,16 @@ input[type="submit"],
 	}
 }
 
-.wp-block-button__link, .add_to_cart_button {
+.wp-block-button__link, .add_to_cart_button, .cta-button {
 	&:visited {
 		color: $color_white;
 		background-color: $color_dark_green;
+	}
+}
+
+.cta-button {
+	&:visited {
+		color: $color_black;
+		background-color: $color_white;
 	}
 }

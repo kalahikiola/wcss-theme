@@ -41,3 +41,19 @@
 		}
     }
 }
+
+.home-hero {
+    .cta-button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 8%;
+        background-color: $color_white;
+        color: $color_black;
+        font-weight: bold;
+
+        @include phone {
+            bottom: 15%;
+        }
+    }
+}
