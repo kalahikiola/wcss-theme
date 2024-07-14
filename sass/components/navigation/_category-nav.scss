@@ -10,12 +10,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
 
     .category-link {
         position: relative;
         display: inline-block;
+        flex: 1 1 125px;
 
         h2 {
             @include reset;
@@ -31,6 +32,7 @@
 
         img {
             width: 100%;
+            max-width: 500px;
             display: block;
         }
 
