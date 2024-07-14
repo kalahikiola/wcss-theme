@@ -28,7 +28,8 @@ get_header();
 
 					<?php if ( function_exists ( 'get_field' ) ) {
 						if(get_field('top_section_info')){
-							?><p><?php the_field('top_section_info')?></p><?php
+							?><section class="contact-info">
+							<p><?php the_field('top_section_info')?></p><?php
 						}
 						if ( get_field('contact_email') ) {
 							$email  = get_field( 'contact_email' );
@@ -44,6 +45,7 @@ get_header();
 						if(get_field('address')){
 							?><address><p><?php the_field('address') ?></p></address><?php
 						}
+						?></section><?php
 					}
 
 					the_content();?>
