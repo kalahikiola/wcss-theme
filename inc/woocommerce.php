@@ -234,22 +234,25 @@ function add_category_links() {
     if ( ( is_shop() || is_product_category() ) && !is_product_category( 'workshops' ) ) {
         $product_categories = array("camping", "climbing", "snow");
 
-        echo '<nav class="category-links-section">';
-        foreach( $product_categories as $category ) {
+        echo '<div class="category-links-wrapper">';
+			echo '<nav class="category-links-section">';
+			foreach( $product_categories as $category ) {
 
-            $term = get_term_by( 'slug', sanitize_title( $category ), 'product_cat' );
-            $term_link = get_term_link( $term, 'product_cat' );
+				$term = get_term_by( 'slug', sanitize_title( $category ), 'product_cat' );
+				$term_link = get_term_link( $term, 'product_cat' );
 
-            echo '<a class="category-link" href="' . $term_link . '">';
-            woocommerce_subcategory_thumbnail( $term );
-            echo '<h2>' . $term->name . '</h2>';
-            echo '</a>';
-            
-        }
-        echo '</nav>';
+				echo '<a class="category-link" href="' . $term_link . '">';
+				woocommerce_subcategory_thumbnail( $term );
+				echo '<h2>' . $term->name . '</h2>';
+				echo '</a>';
+				
+			}
+			echo '</nav>';
+        echo '</div>';
     }
 }
-add_action( 'woocommerce_shop_loop_header', 'add_category_links', 9);
+// add_action( 'woocommerce_shop_loop_header', 'add_category_links', 9);
+add_action( 'woocommerce_before_main_content', 'add_category_links', 9);
 
 // Add testimonials to workshop page
 function testimonials_workshop() {
