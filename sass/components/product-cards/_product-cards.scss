@@ -48,7 +48,8 @@
             }
 
             @include large {
-                width: calc(25% - 2rem);
+                width: 100%;
+                max-width: 20rem;
             }
 
             display: flex;
