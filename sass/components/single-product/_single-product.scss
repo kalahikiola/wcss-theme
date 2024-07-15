@@ -1,7 +1,6 @@
 
 .single-product {
 
-    
     .product_cat-workshops {
         .single-product-wrapper {
             max-width: 37.5rem;
@@ -13,11 +12,12 @@
         }
     }
 
+    .product {
+        max-width: 80rem;
+        margin: 2rem auto;
+    }
+
     @include tablet {
-        .product {
-            max-width: 80rem;
-            margin: 0 auto;
-        }
 .product_cat-snow, .product_cat-camping, .product_cat-climbing {
     .woocommerce-product-gallery {
         grid-column: 1 / 2;
