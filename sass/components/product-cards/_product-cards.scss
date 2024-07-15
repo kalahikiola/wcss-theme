@@ -76,3 +76,16 @@
         }
     }
 }
+
+.product.type-product, .wc-block-grid__product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ .product.type-product {
+    .star-rating {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
