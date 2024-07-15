@@ -28,56 +28,22 @@
             }
 
             a:hover {
-               color:  #f5f5f5;
+                color:  #f5f5f5;
             }
         }
 
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--dashboard { // dashboard
-            grid-area: acc-dashboard;
+        // if class is == to .this
+        .woocommerce-MyAccount-navigation-link {
+            &[class*="--dashboard"] { grid-area: acc-dashboard; }
+            &[class*="--orders"] { grid-area: acc-orders; }
+            &[class*="--downloads"] { grid-area: acc-downloads; }
+            &[class*="--giftcards"] { grid-area: acc-giftcards; }
+            &[class*="--edit-address"] { grid-area: acc-address; }
+            &[class*="--payment-methods"] { grid-area: acc-payment; }
+            &[class*="--edit-account"] { grid-area: acc-details; }
+            &[class*="--bookings"] { grid-area: acc-bookings; }
+            &[class*="--account-wishlists"] { grid-area: acc-wishlist; }
+            &[class*="--customer-logout"] { grid-area: acc-logout; }
         }
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--orders { // orders
-            grid-area: acc-orders;
-        }
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--downloads { // downloads
-
-            grid-area: acc-downloads;
-        } 
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--giftcards { // giftcards
-            grid-area: acc-giftcards;
-        }
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-address { // addresses
-
-            grid-area: acc-address
-        }
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--payment-methods { // payment methods
-
-            grid-area: acc-payment;
-        }
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-account { // account details
-
-            grid-area: acc-details;
-        }
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--bookings { // bookings
-
-            grid-area: acc-bookings;
-        }
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--account-wishlists { // wishlist
-
-            grid-area: acc-wishlist;
-        }
-
-        .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--customer-logout { //log out
-
-            grid-area: acc-logout;
-        }
-
     }
 }
