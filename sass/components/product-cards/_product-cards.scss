@@ -89,3 +89,9 @@
         transform: translateX(-50%);
     }
 }
+
+.woocommerce-cart .wc-block-grid__product-rating {
+     .star-rating {
+        display: none;
+    }
+}
