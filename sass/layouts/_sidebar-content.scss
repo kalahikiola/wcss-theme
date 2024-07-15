@@ -7,9 +7,12 @@
         grid-template-columns: $size__site-sidebar auto;
         grid-template-areas:
             "header header"
+            "cat-nav cat-nav"
             "sidebar main"
             "footer footer";
     }
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 .site-header {
@@ -19,10 +22,17 @@
 .site-main {
 	grid-area: main;
 	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+    margin: 0 auto;
+}
+
+.site-main .category-links-wrapper {
+    grid-area: cat-nav;
 }
 
 .widget-area {
 	grid-area: sidebar;
+    max-width: 18.75rem;
+    margin-left: 2rem;
 }
 
 .site-footer {
