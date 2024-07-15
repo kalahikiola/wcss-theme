@@ -39,4 +39,19 @@
             }
         }
     }
+
+    .footer-sign-in {
+
+        .sign-in-logo {
+            vertical-align: middle;
+            margin-right: 0.2rem;
+        }
+
+        .sign-in-link {
+            vertical-align: middle;
+            font-family: $font__headings;
+        }
+
+    }
+
 }
