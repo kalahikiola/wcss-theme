@@ -26,15 +26,15 @@
             &[class*="--customer-logout"] { grid-area: acc-logout; }
 
             a {
-                border: 2px solid white;
+                border: 2px solid $color_white;
                 padding: 0.5rem;
                 background-color: $color_dark_green;
+                height: 4rem;
+                cursor: pointer;
+                color: $color_white;
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                color: white;
-                display: block;
+                 align-items: center; 
                 text-align: center;
 
                 &:hover {
