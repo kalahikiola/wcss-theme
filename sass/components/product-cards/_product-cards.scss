@@ -35,8 +35,12 @@
         @include tablet {
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: stretch;
+        }
+
+        @include desktop {
+            justify-content: flex-start;
         }
 
         .product.type-product {
