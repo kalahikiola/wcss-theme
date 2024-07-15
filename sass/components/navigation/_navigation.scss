@@ -17,7 +17,20 @@
 	#header-right {
 		justify-content: end;
 		grid-template-rows: auto;
-	      	grid-template-columns: auto auto auto auto;
+	    grid-template-columns: auto auto auto auto;
+
+        li {
+            a {
+                .sign-in-logo:hover,
+                .cart-icon:hover {
+                    path,
+                    circle {
+                        fill: $color_dark_green;
+                    }
+                }
+            }
+        }
+
 	}
 
 	.custom-logo-link {
