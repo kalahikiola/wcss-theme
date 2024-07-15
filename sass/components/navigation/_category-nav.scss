@@ -12,6 +12,7 @@
     align-items: center;
     gap: 1rem;
     width: 100%;
+    margin-top: 1.5rem;
 
     .category-link {
         position: relative;
@@ -31,9 +32,14 @@
         }
 
         img {
-            width: 100%;
             display: block;
-            // max-width: 480px;
+            width: 9.375rem;
+            @include phone {
+                width: 12.5rem;
+            }
+            @include large {
+                width: 100%; 
+            }
         }
 
     }
