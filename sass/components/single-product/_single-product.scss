@@ -2,6 +2,17 @@
 .single-product {
 
     
+    .product_cat-workshops {
+        .single-product-wrapper {
+            max-width: 37.5rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+    }
+
     @include tablet {
         .product {
             max-width: 80rem;

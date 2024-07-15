@@ -89,6 +89,10 @@ function wcss_theme_setup() {
 			'flex-height' => true,
 		)
 	);
+
+// Add theme support for align-wide and align-full
+	add_theme_support( 'align-wide' );
+    add_theme_support( 'align-full' );
 }
 add_action( 'after_setup_theme', 'wcss_theme_setup' );
 
