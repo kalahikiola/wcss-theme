@@ -12,6 +12,18 @@ textarea {
 
 nav {
 	font-family: $font__headings;
+	text-transform: uppercase;
+}
+
+h1,
+h2,
+.wc-block-grid__product-title {
+	text-transform: uppercase;
+}
+
+.woocommerce-Price-amount.amount,
+.wc-block-grid__product-title {
+	font-weight: bold;
 }
 
 @import "headings";
