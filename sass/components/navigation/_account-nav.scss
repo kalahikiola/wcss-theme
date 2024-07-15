@@ -2,10 +2,15 @@
 
     ul {
         display: grid;
+        grid-template-areas: "acc-dashboard acc-orders" "acc-downloads acc-giftcards" "acc-address acc-payment" "acc-details acc-bookings" "acc-wishlist acc-logout";
+        @include tablet {
         grid-template-areas: 
         "acc-dashboard acc-orders acc-downloads acc-giftcards acc-address"
         "acc-payment acc-details acc-bookings acc-wishlist acc-logout";
+        }
         gap: 0.5rem;
+        margin: 0 auto;
+        padding: 0;
 
         .woocommerce-MyAccount-navigation-link {
             border: 2px solid white;
@@ -14,10 +19,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
             
             a {
                 color: white;
                 display: block;
+                text-align: center;
             }
 
             a:hover {
