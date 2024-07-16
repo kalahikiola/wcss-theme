@@ -7,14 +7,53 @@
 }
 
 .woocommerce-MyAccount-content {
-        box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
-        padding: 1rem;
-        margin: 0 auto;
-        margin-top: 2rem;
-        max-width: 480px;
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
+    max-width: 680px;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-top: 2rem;
 
-        
-        a {
-            text-decoration: underline;
+    .woocommerce-EditAccountForm.edit-account {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    a {
+        text-decoration: underline;
+    }
+
+    .woocommerce-info {
+        text-align: center;
+
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    //form on Account Details
+    .woocommerce-form-row {
+        max-width: 320px;
+        text-align: center; 
+
+        label {
+            display: block;
+        }
+
+        .account_display_name {
+            text-align: center; 
+        }
+
+        span {
+            em {
+                display: block;
+            }
         }
     }
+
+} 
