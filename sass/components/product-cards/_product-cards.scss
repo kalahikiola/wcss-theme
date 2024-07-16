@@ -96,8 +96,16 @@
     }
 }
 
-.products {
+.products,
+.wc-block-grid__products {
+
+    
     li {
+        transition: transform .3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
         border: 2px solid $color_black;
     }
 }
