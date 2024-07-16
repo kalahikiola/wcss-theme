@@ -236,7 +236,7 @@ function my_acf_google_map_api( $api ){
 
 // Lower Yoast SEO Metabox location
 function yoast_to_bottom(){
-   return 'low';
+    return 'low';
 }
 add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
 
@@ -245,7 +245,7 @@ function wcss_login_styles() {
     ?>
     <style type="text/css">
         /* Custom login logo styling */
-        #login h1 a, .login h1 a {
+        #login h1 a {
             background-image: url(<?php echo esc_url(get_stylesheet_directory_uri() . '/images/WCSS-Logo-Official.svg'); ?>);
             height: 320px;
             width: 320px;
@@ -255,16 +255,22 @@ function wcss_login_styles() {
         }
         
         /* Custom background styling */
-        body.login {
+        body.login.js.login-action-login.wp-core-ui {
             background-image: url(<?php echo esc_url(get_stylesheet_directory_uri() . '/images/wcss-bg.jpeg'); ?>);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center; 
         }
-		
+
+		/* forgotten password text */
+		body.login.js.login-action-login.wp-core-ui
+		#nav
+		.wp-login-lost-password {
+			color: white;
+		}
+
     </style>
     <?php
 }
 add_action('login_enqueue_scripts', 'wcss_login_styles');
-
 ?>
