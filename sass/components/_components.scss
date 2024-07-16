@@ -46,6 +46,10 @@
 --------------------------------------------- */
 @import "flex-layouts/4-item-flex";
 
+/*login
+--------------------------------------------- */
+@import "login/login";
+
 /* my account pages
 --------------------------------------------- */
 @import "flex-layouts/my-acc-pages";
@@ -67,4 +71,4 @@
 @import "footer/footer";
 
 /* Workshop Background Image */
-@import "media/workshops"
+@import "media/workshops";

@@ -236,6 +236,71 @@ function my_acf_google_map_api( $api ){
 
 // Lower Yoast SEO Metabox location
 function yoast_to_bottom(){
-   return 'low';
+    return 'low';
 }
 add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+// Function to customize the login page logo, background, and link styles
+function wcss_login_styles() {
+    ?>
+    <style type="text/css">
+        /* Custom login logo styling */
+        #login h1 a {
+            background-image: url(<?php echo esc_url(get_stylesheet_directory_uri() . '/images/WCSS-Logo-Official.svg'); ?>);
+            height: 320px;
+            width: 320px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        /* Custom background styling */
+        body.login.js.login-action-login.wp-core-ui {
+            background-image: url(<?php echo esc_url(get_stylesheet_directory_uri() . '/images/wcss-bg.jpeg'); ?>);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+        }
+
+		/* Forgotten password text */
+		body.login #nav .wp-login-lost-password,
+		body.login div#login p#backtoblog a,
+		body.login .privacy-policy-link {
+			color: white;
+			transition: all 0.3s ease;
+			padding: 0.5rem 1rem; 
+			border-radius: 5px;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		body.login #nav .wp-login-lost-password:hover,
+		body.login div#login p#backtoblog a:hover,
+		body.login .privacy-policy-link:hover {
+			color: white;
+			background-color: #00422A;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			text-decoration: none;
+		}
+
+		body.login .submit #wp-submit {
+			background: #00422A;
+			border-color: black;
+		}
+
+
+    </style>
+    <?php
+}
+add_action('login_enqueue_scripts', 'wcss_login_styles');
+
+function wcss_login_title() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'wcss_login_title' );
+
+function wcss_login_title_title() {
+    return 'West Coast Summit Supply';
+}
+add_filter( 'login_headertext', 'wcss_login_title_title' );
+?>
