@@ -2,6 +2,7 @@
 main {
     .upcoming-workshops {
         text-align: center;
+        z-index: -1;
     }
 
     .workshops-flex ul,
@@ -50,5 +51,9 @@ main {
     }
     .instructors article {
         margin-bottom: 1rem;
+    }
+
+    .workshops-flex .products.columns-4 .product.type-product{
+        z-index: -1;
     }
 }
