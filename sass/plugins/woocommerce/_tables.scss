@@ -19,7 +19,7 @@ table.shop_table_responsive {
 			clear: both;
 
 			&::before {
-				content: attr(data-title) ": ";
+				// content: attr(data-title) ": ";
 				float: left;
 			}
 

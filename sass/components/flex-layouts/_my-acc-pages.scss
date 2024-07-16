@@ -19,7 +19,15 @@
         }
 
         .woocommerce-info {
-            // .woocommerce-Button.wc-forward.button { // order page
-                text-align: center;
+            text-align: center;
+
+
+        }
+
+        .button {
+            // text-align: center;
+            display: flex;
+            justify-content: center;
+            // align-items: center;
         }
     }
