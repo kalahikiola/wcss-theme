@@ -13,11 +13,18 @@
     gap: 1rem;
     width: 100%;
     margin-top: 1.5rem;
+    @include tablet {
+        gap: 2rem;
+    }
 
     .category-link {
         position: relative;
         display: inline-block;
-        // flex: 1 1 200px;
+        transition: transform .3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         h2 {
             @include reset;
@@ -34,6 +41,7 @@
         img {
             display: block;
             width: 9.375rem;
+            border: 5px solid $color_black;
             @include phone {
                 width: 12.5rem;
             }
