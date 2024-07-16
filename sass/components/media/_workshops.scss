@@ -1,0 +1,53 @@
+.featured-workshops {
+    background-image: url('http://localhost/wcss/wp-content/uploads/2024/07/AdobeStock_674467899-scaled.jpeg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center; 
+    max-width: 100vw;
+    margin: 0rem calc(50% - 50vw);
+    min-height: 100vh;
+    background-color: #474747;
+    padding: 2rem; 
+
+    article {
+        max-height: 350px;
+
+        h3 {
+            color: #ffffff;
+            text-transform: uppercase;
+
+            &:hover {
+                color: #00422A;
+            }
+        }
+    }
+
+    h2 {
+        margin-top: 5rem;
+    }
+}
+
+.testimonials {
+    margin: 0rem calc(50% - 50vw);
+}
+
+.instructors {
+    background-image: url('http://localhost/wcss/wp-content/uploads/2024/07/AdobeStock_674467899-scaled.jpeg'); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    max-width: 100vw;
+    margin: 0rem calc(50% - 50vw);
+    min-height: 100vh; /* Allow section to grow with content */
+    background-color: #474747;
+    padding: 2rem; /* Add padding for spacing */
+
+    article {
+        background-color: #ffffff;
+        max-height: 90%;
+
+        p {
+            color: #00422A;		
+        }
+    }
+}

@@ -6,7 +6,8 @@
     padding: 3.125rem .625rem;
     background-color: #474747;
     min-width: 100%;
-    margin: 0rem calc(50% - 50vw);
+    margin-top: 0; 
+
     @include large {
         flex-wrap: wrap;
         gap: .625rem;
