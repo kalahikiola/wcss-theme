@@ -58,15 +58,15 @@
         left: 50%;
         transform: translateX(-50%);
         bottom: 8%;
-        background-color: $color_white;
-        color: $color_dark_green;
+        background-color: $color_dark_green;
+        color: $color_white;
         font-weight: bold;
         text-transform: uppercase;
         border: 3px solid $color_black;
         width: 150px;
         &:hover {
-            background-color: #00422A;
-            color: $color_white;
+            background-color: $color_white;
+            color: $color_dark_green;
         }
 
         @include phone {

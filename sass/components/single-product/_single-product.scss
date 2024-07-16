@@ -54,3 +54,10 @@
             padding: 0 1rem;
         }
     }
+
+.single-product-wrapper {
+    border: 4px solid $color_dark_green;
+    img {
+        border: 3px solid $color_black;
+    }
+}
