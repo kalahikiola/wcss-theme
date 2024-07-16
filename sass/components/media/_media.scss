@@ -42,14 +42,20 @@
     }
 }
 
-.home-hero,  
-.wp-block-image,
-.workshops-hero {
+ 
+.wp-block-image {
     img {
         border-top: 4px solid $color_black;
         border-bottom: 4px solid $color_black;
     }
 }
+
+.home-hero, .workshops-hero {
+    img {
+    border-bottom: 4px solid $color_black; 
+    }
+}
+
 .featured-workshops,
 .product_cat-workshops,
 .instructors {

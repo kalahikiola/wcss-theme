@@ -13,6 +13,19 @@
     margin: 0 auto;
     margin-top: 2rem;
 
+    .woocommerce-Giftcards.woocommerce-MyAccount-Giftcards-form {
+            flex-direction: column;
+            gap: 1rem;
+            .woocommerce-button.button {
+                max-width: 15rem;
+                margin: 0 auto;
+            }
+            @include phone {
+                flex-direction: row;
+            }
+        }
+    
+
     .woocommerce-EditAccountForm.edit-account {
         display: flex;
         flex-direction: column;
