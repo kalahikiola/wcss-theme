@@ -239,3 +239,32 @@ function yoast_to_bottom(){
    return 'low';
 }
 add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+// Function to customize the login page logo, background, and link styles
+function wcss_login_styles() {
+    ?>
+    <style type="text/css">
+        /* Custom login logo styling */
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo esc_url(get_stylesheet_directory_uri() . '/images/WCSS-Logo-Official.svg'); ?>);
+            height: 320px;
+            width: 320px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        /* Custom background styling */
+        body.login {
+            background-image: url(<?php echo esc_url(get_stylesheet_directory_uri() . '/images/wcss-bg.jpeg'); ?>);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+        }
+		
+    </style>
+    <?php
+}
+add_action('login_enqueue_scripts', 'wcss_login_styles');
+
+?>
