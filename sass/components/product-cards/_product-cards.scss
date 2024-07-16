@@ -101,11 +101,7 @@
 
     
     li {
-        transition: transform .3s ease;
 
-        &:hover {
-            transform: scale(1.1);
-        }
         border: 3px solid $color_dark_green;
 
         a {
