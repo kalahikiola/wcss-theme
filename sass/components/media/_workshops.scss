@@ -11,14 +11,15 @@
 
     article {
         max-height: 350px;
+        transition: transform .3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         h3 {
-            &:hover {
-                color: #00422A;
-            }
             color: #ffffff;
             text-transform: uppercase;
-
         }
     }
 
@@ -45,9 +46,17 @@
     article {
         background-color: #ffffff;
         max-height: 90%;
+        border: 2px solid $color_black;
 
         p {
             color: #00422A;		
         }
+    }
+}
+
+.workshops-flex {
+
+    li {
+        border: 2px solid $color_black;
     }
 }
