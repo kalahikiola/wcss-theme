@@ -303,4 +303,11 @@ function wcss_login_title_title() {
     return 'West Coast Summit Supply';
 }
 add_filter( 'login_headertext', 'wcss_login_title_title' );
-?>
+
+// Remove unwanted widgets from dashboard
+function remove_dashboard_widgets() {
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+    remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+    remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' );
+} 
+add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
