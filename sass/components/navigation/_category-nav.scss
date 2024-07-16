@@ -1,18 +1,23 @@
-.category-links-section {
+.category-links-wrapper {
+    grid-area: cat-nav;
+    display: grid;
+    width: 100%;
+}
 
-    //position: relative;
+.category-links-section {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     width: 100%;
+    margin-top: 1.5rem;
 
     .category-link {
-
         position: relative;
         display: inline-block;
-        //Hi
+        // flex: 1 1 200px;
 
         h2 {
             @include reset;
@@ -27,8 +32,14 @@
         }
 
         img {
-            //width: 100%;
-            //display: block;
+            display: block;
+            width: 9.375rem;
+            @include phone {
+                width: 12.5rem;
+            }
+            @include large {
+                width: 100%; 
+            }
         }
 
     }

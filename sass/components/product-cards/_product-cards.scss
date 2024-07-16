@@ -1,4 +1,4 @@
-.wc-block-grid.has-4-columns .wc-block-grid__product, .products.columns-4 .product.type-product, .products.columns-3 .product.type-product, .instructors article, .post-14 .entry-content {
+.wc-block-grid.has-4-columns .wc-block-grid__product, .products.columns-4 .product.type-product, .products.columns-3 .product.type-product, .instructors article, .post-14 .entry-content, .single-product-wrapper {
     box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
     padding: 1rem;
 }
@@ -35,8 +35,12 @@
         @include tablet {
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: stretch;
+        }
+
+        @include desktop {
+            justify-content: flex-start;
         }
 
         .product.type-product {
@@ -48,7 +52,8 @@
             }
 
             @include large {
-                width: calc(25% - 2rem);
+                width: 100%;
+                max-width: 20rem;
             }
 
             display: flex;
@@ -69,5 +74,24 @@
                 justify-content: center;
             }
         }
+    }
+}
+
+.product.type-product, .wc-block-grid__product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ .product.type-product {
+    .star-rating {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.woocommerce-cart .wc-block-grid__product-rating {
+     .star-rating {
+        display: none;
     }
 }
