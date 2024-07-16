@@ -41,3 +41,18 @@
 .wc-block-components-panel__button:hover {
 	border: none;
 }
+
+// make proceed to checkout into a proper button for accessibility 
+.wc-block-cart__submit-container
+.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.contained
+.wc-block-components-button__text {
+	padding: 1rem 3rem;
+	background-color: $color_dark_green;
+	color: whitesmoke;
+	&:hover {
+		border: 2px solid $color_dark_green;
+		background-color: whitesmoke;
+		color:$color_dark_green;
+		transition: all 0.3s ease-in;
+	}
+}
