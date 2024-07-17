@@ -57,3 +57,8 @@
     }
 
 } 
+
+//change button text color to green on the user purchase detail page
+.wc-block-components-address-form__address_2-toggle {
+    color: $color_dark_green;
+}
