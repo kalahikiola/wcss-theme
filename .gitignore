@@ -104,3 +104,6 @@ woocommerce.css
 
 # env vars
 .env
+
+# hide api
+inc/api.php

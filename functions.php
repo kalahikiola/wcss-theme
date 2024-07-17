@@ -12,6 +12,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+require('inc/api.php');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -154,7 +156,7 @@ function wcss_theme_scripts() {
 		);
 		wp_enqueue_script(
 		'google-maps-api',
-		'https://maps.googleapis.com/maps/api/js?key=AIzaSyBA1pHxJorUPSSXAN5qTMmXIb-MEV52s0w&c&loading=async&
+		'https://maps.googleapis.com/maps/api/js?key='. $GLOBALS['api_key'] .'&loading=async&
 		callback=Function.prototype',
 		null,
 		null,
@@ -228,7 +230,7 @@ add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 
 // Google Map API
 function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyBA1pHxJorUPSSXAN5qTMmXIb-MEV52s0w&c';
+	$api['key'] = $GLOBALS['api_key'];
 	return $api;
 	}
 	add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
