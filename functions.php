@@ -228,7 +228,7 @@ add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 
 // Google Map API
 function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyBA1pHxJorUPSSXAN5qTMmXIb-MEV52s0w';
+	$api['key'] = '';
 	return $api;
 	}
 	add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
