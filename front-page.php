@@ -67,8 +67,14 @@ get_header();
                         <?php
                     }
                     wp_reset_postdata();
-                    ?>
-				 <!-- <img class="bg-mountains" src="https://westcoastsummitsupply.bcitwebdeveloper.ca/wp-content/uploads/2024/07/AdobeStock_674467899-scaled.jpeg" alt=""> -->
+
+				 if (function_exists('get_field')) {
+					 if (get_field('background_image')) {
+						$image = get_field('background_image');
+						?> <img class="bg-mountains" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /> <?php
+					 }
+				 }
+				 ?>
                 </section>
                 <?php
 			}
