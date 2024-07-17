@@ -83,6 +83,7 @@
 
 .featured-workshops {
     position: relative;
+
     .bg-mountains {
         display: none;
         position: absolute;
@@ -99,6 +100,10 @@
         @include phone {
             display: block;
         }
+
+        @include desktop {
+            object-fit: fill;
+        }
     }
 
     @include phone {
@@ -109,3 +114,5 @@
 
 
 }
+
+  
