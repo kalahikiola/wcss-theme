@@ -108,6 +108,10 @@
         .wc-bookings-availability-item-body {
             flex-direction: column;
         }
+
+        .components-popover.wc-bookings-availability-popover.is-positioned {
+            z-index: 9999;
+        } 
     }
 }
 
