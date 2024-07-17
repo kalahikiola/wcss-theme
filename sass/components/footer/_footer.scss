@@ -1,7 +1,7 @@
 .site-footer {
     @include flex-center-column;
-    padding: 0 1rem 1rem;
-    box-shadow: 0 -4px 4px -4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    box-shadow: 0 -4px 4px -4px rgba(0, 0, 0, 0.5);
 
     @include large {
         flex-direction: row;
@@ -34,6 +34,14 @@
                 display: flex;
                 flex-direction: row;
             }
+
+            @include large {
+                font-size: .8rem;
+            }
+
+            @include desktop {
+                font-size: 1rem;
+            }
             
             li {
                 padding: .5rem;
@@ -53,6 +61,12 @@
         .sign-in-link {
             vertical-align: middle;
             font-family: $font__headings;
+            @include large {
+                font-size: .8rem;
+            }
+            @include desktop {
+                font-size: 1rem;
+            }
         }
 
     }
