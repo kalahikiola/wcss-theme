@@ -1,7 +1,22 @@
-.post-type-archive-product .site,
-.term-camping .site,
-.term-climbing .site,
-.term-snow .site {
+.post-type-archive-product,
+.term-camping,
+.term-climbing,
+.term-snow,
+.term-backpacks,
+.term-pillows, 
+.term-sleeping-bag, 
+.term-tents, 
+.term-belay, 
+.term-carabiner, 
+.term-chalk, 
+.term-rope, 
+.term-shoes, 
+.term-gloves, 
+.term-goggles,
+.term-helmet, 
+.term-skis, 
+.term-snowboard {
+    .site {
     @include desktop {
         display: grid;
         grid-template-columns: $size__site-sidebar auto;
@@ -13,6 +28,7 @@
     }
     max-width: 120rem;
     margin: 0 auto;
+}
 }
 
 .site-header {
