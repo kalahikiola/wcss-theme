@@ -7,17 +7,25 @@
 .category-links-section {
     position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     width: 100%;
     margin-top: 1.5rem;
+    @include large-mobile {
+        gap: 1rem;
+    }
+    @include tablet {
+        gap: 2rem;
+    }
 
     .category-link {
         position: relative;
         display: inline-block;
-        // flex: 1 1 200px;
+        transition: transform .3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         h2 {
             @include reset;
@@ -29,11 +37,19 @@
             color: $color_white;
             //mix-blend-mode: difference;
             filter: drop-shadow(0 0 0.75rem rgb(22, 22, 22));
+            font-size: 1rem;
+            @include phone {
+                font-size: 2rem;
+            }
+            @include large {
+                font-size: 2.5rem;
+            }
         }
 
         img {
             display: block;
             width: 9.375rem;
+            filter: drop-shadow(0 0 0.3rem rgb(22, 22, 22));
             @include phone {
                 width: 12.5rem;
             }

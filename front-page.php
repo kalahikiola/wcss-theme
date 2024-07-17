@@ -68,6 +68,7 @@ get_header();
                     }
                     wp_reset_postdata();
                     ?>
+				 <!-- <img class="bg-mountains" src="https://westcoastsummitsupply.bcitwebdeveloper.ca/wp-content/uploads/2024/07/AdobeStock_674467899-scaled.jpeg" alt=""> -->
                 </section>
                 <?php
 			}

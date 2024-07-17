@@ -33,6 +33,11 @@
 	grid-area: sidebar;
     max-width: 18.75rem;
     margin-left: 2rem;
+    display: none;
+
+    @include desktop {
+        display: block;
+    }
 }
 
 .site-footer {

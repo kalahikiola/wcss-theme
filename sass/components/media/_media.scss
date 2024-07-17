@@ -23,6 +23,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        z-index: 10000;
         transform: translate(-50%, -50%);
         color: $color_white;
         font-size: 2.625rem;
@@ -42,11 +43,15 @@
     }
 }
 
-.home-hero,  
-.wp-block-image,
+.home-hero, .workshops-hero, .wp-block-image  {
+    img {
+        filter: drop-shadow(0 0 0.5rem rgb(22, 22, 22));
+    }
+}
+
 .featured-workshops,
-.workshops-hero,
-.product_cat-workshops {
+.product_cat-workshops,
+.instructors {
     img {
         border: 4px solid $color_black;
     }
@@ -65,7 +70,7 @@
         border: 3px solid $color_black;
         width: 150px;
         &:hover {
-            background-color: #00422A;
+            background-color: $color_dark_green;
             color: $color_white;
         }
 
@@ -75,3 +80,17 @@
     }
 }
 
+
+// .featured-workshops {
+//     position: relative;
+//     .bg-mountains {
+//         position: absolute;
+//         bottom: 0;
+//         border: none;
+//         object-fit: cover;
+//         max-width: 100vw;
+//         margin: 0rem calc(50% - 50vw);
+//         z-index: -10000;
+//         min-height: 100%;
+//     }
+// }

@@ -1,12 +1,37 @@
 // Home Page Testimonials
+.home {
+    .testimonials {
+        background-image: linear-gradient(to bottom, #474747 0%, #474747 96%, white 100%);
+        .wp-block-pullquote {
+            blockquote {
+                color: $color_white;
+                cite {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+.archive {
+    .testimonials {
+        .wp-block-pullquote {
+            blockquote {
+                color: $color_dark_green;
+                cite {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
 
 .testimonials {
     @include flex-column;
     align-items: center;
     padding: 3.125rem .625rem;
-    background-color: #474747;
     min-width: 100%;
-    margin-top: 0; 
+    margin-top: 1rem; 
 
     @include large {
         flex-wrap: wrap;
@@ -72,6 +97,7 @@
         }
     }
 }
+
 
 // Related Products
 

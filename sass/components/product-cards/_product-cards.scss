@@ -96,8 +96,17 @@
     }
 }
 
-.products {
+.products,
+.wc-block-grid__products {
     li {
-        border: 2px solid $color_black;
+
+        border: 3px solid $color_dark_green;
+
+    }
+}
+
+.instructors {
+    article {
+        border: 3px solid $color_dark_green;
     }
 }
