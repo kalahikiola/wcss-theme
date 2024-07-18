@@ -17,23 +17,24 @@
 .term-skis, 
 .term-snowboard {
     .site {
-    @include desktop {
-        display: grid;
-        grid-template-columns: $size__site-sidebar auto;
-        grid-template-areas:
-            "header header"
-            "cat-nav cat-nav"
-            "sidebar main"
-            "footer footer";
-    }
-    max-width: 120rem;
-    margin: 0 auto;
+        .shop-content-wrapper {
+            @include desktop {
+                display: grid;
+                grid-template-columns: $size__site-sidebar auto;
+                grid-template-areas:
+                    "cat-nav cat-nav"
+                    "sidebar main"
+            }
+            max-width: 120rem;
+            margin: 0 auto;
+        }
+    
 }
 }
 
-.site-header {
-	grid-area: header;
-}
+// .site-header {
+// 	grid-area: header;
+// }
 
 .site-main {
 	grid-area: main;
@@ -56,8 +57,8 @@
     }
 }
 
-.site-footer {
-	grid-area: footer;
-}
+// .site-footer {
+// 	grid-area: footer;
+// }
 
 @import "no-sidebar";
