@@ -361,8 +361,14 @@ function display_dashboard_tutorials() {
         <ul>
 			<h4>How to create a new free workshop</h4>
             <li>
-                <video controls>
-                    <source src="<?php echo site_url('/wp-content/uploads/'); ?>" type="video/mp4">
+                <video width=320 height=240 controls>
+                    <source src="<?php echo site_url('/wp-content/uploads/2024/07/how-to-create-a-workshop.mp4'); ?>" type="video/mp4">
+                </video>
+            </li>
+			<h4>How to create a new testimonial</h4>
+			<li>
+                <video width=320 height=240 controls>
+                    <source src="<?php echo site_url('/wp-content/uploads/2024/07/Testimonial-Tutorial.mp4'); ?>" type="video/mp4">
                 </video>
             </li>
         </ul>
