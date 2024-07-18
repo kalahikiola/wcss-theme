@@ -53,3 +53,20 @@ main {
         margin-bottom: 1rem;
     }
 }
+
+.home {
+    .wp-block-heading {
+        margin: 6rem 0rem;
+    }
+    .wc-block-grid__products {
+        margin-bottom: 8rem;
+    }
+    .featured-workshops {
+        h2 {
+            margin: 4rem 0rem;
+            @include tablet {
+                margin: 8rem 0rem;
+            }
+        }
+    }
+}
