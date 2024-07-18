@@ -2,14 +2,15 @@
 .single-product {
 
     .product_cat-workshops {
+
         .single-product-wrapper {
             max-width: 37.5rem;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            
         }
+
     }
 
     .product {
@@ -18,42 +19,44 @@
     }
 
     @include tablet {
-.product_cat-snow, .product_cat-camping, .product_cat-climbing {
-    .woocommerce-product-gallery {
-        grid-column: 1 / 2;
-        grid-row: 1;
-        max-width: 100%;
+        .product_cat-snow,
+        .product_cat-camping,
+        .product_cat-climbing {
+            .woocommerce-product-gallery {
+                grid-column: 1 / 2;
+                grid-row: 1;
+                max-width: 100%;
+            }
+
+            .summary.entry-summary {
+                padding-left: 2rem;
+                grid-column: 2 / 3;
+                grid-row: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     }
 
-    .summary.entry-summary {
-            padding-left: 2rem;
-            grid-column: 2 / 3;
-            grid-row: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    .single_add_to_cart_button {
+        margin-top: 1rem;
+    }
+
+    .woocommerce-noreviews{
+        background-color: transparent;
+    }
+
+    p strong{
+        color: $color_dark_green;
+        font-family: $font__headings;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0 1rem;
     }
 }
-
-        .single_add_to_cart_button {
-            margin-top: 1rem;
-        }
-
-        .woocommerce-noreviews{
-            background-color: transparent;
-        }
-
-        p strong{
-            color: $color_dark_green;
-            font-family: $font__headings;
-        }
-
-        ul {
-            margin: 0;
-            padding: 0 1rem;
-        }
-    }
 
 .single-product-wrapper {
     border: 4px solid $color_dark_green;

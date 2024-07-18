@@ -33,14 +33,13 @@ get_header();
 					}?>
 
 				</div>
-					<?php 
-					$location = get_field('map_location');
-					if( $location ): ?>
-						<div class="acf-map" data-zoom="16">
-							<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
-						</div>
-					<?php endif; ?>
-
+                <?php 
+                $location = get_field('map_location');
+                if( $location ): ?>
+                    <div class="acf-map" data-zoom="16">
+                        <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+                    </div>
+                <?php endif; ?>
 	 		</article>
 		<?php
 		endwhile; // End of the loop.
