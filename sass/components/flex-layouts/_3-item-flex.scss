@@ -3,6 +3,7 @@
     .testimonials {
         @include phone {
             background-image: linear-gradient(to bottom, #474747 0%, #474747 96%, white 100%);
+            padding-bottom: 10rem;
         }
         h2 {
             margin: 5rem 0rem 4rem 0rem; 
