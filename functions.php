@@ -338,3 +338,53 @@ function wcss_post_filter( $use_block_editor, $post) {
     }
 }
 add_filter('use_block_editor_for_post', 'wcss_post_filter', 10, 2);
+
+
+// add tutorial videos to dash
+function dashboard_video_tutorial() {
+    wp_add_dashboard_widget(
+		    // widget
+        'custom_dashboard_widget',
+			// title
+        'Tutorial Videos',
+			// display func
+        'display_dashboard_tutorials'
+    );
+}
+add_action('wp_dashboard_setup', 'dashboard_video_tutorial');
+
+function display_dashboard_tutorials() {
+    ?>
+    <div class="dashboard-tutorials">
+        <h3>Tutorial Videos</h3>
+        <p>Watch the videos below to learn how to use the site:</p>
+        <ul>
+			<h4>How to create a new free workshop</h4>
+            <li>
+                <video controls>
+                    <source src="<?php echo site_url('/wp-content/uploads/'); ?>" type="video/mp4">
+                </video>
+            </li>
+        </ul>
+    </div>
+    <?php
+}
+
+function tutorial_styles() {
+    ?>
+    <style>
+    .dashboard-tutorials ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .dashboard-tutorials li {
+        margin-bottom: 1rem;
+    }
+    .dashboard-tutorials video {
+        max-width: 100%;
+        height: auto;
+    }
+    </style>
+    <?php
+}
+add_action('admin_head', 'tutorial_styles');
