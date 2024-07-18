@@ -315,3 +315,18 @@ function remove_dashboard_widgets() {
     remove_meta_box( 'wc_admin_dashboard_setup', 'dashboard', 'normal');
 } 
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
+
+// Remove block editor from cpt's and pages
+//  that dont use it
+function wcss_post_filter( $use_block_editor, $post) {
+
+	$page_ids = array(14);
+	$post_types = array('wcss-instructors');
+
+	if ( in_array( $post->ID, $page_ids) || in_array($post->post_type, $post_types)) {
+        return false;
+    } else {
+        return $use_block_editor;
+    }
+}
+add_filter('use_block_editor_for_post', 'wcss_post_filter', 10, 2);
