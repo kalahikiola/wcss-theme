@@ -1,72 +1,79 @@
 .site-footer {
-    @include flex-center-column;
-    padding: 1rem;
+
     box-shadow: 0 -4px 4px -4px rgba(0, 0, 0, 0.5);
 
-    @include large {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .custom-logo {
-        @include box(6rem);
-    }
-
-    .store-info {
+    .footer-content-wrapper {
         @include flex-center-column;
-        
+        max-width: 120rem;
+        margin: auto;
+        padding: 1rem;
+
         @include large {
             flex-direction: row;
-            
-            address {
-                max-width: 12.5rem;
-            }
+            justify-content: space-between;
         }
-    }
 
+        .custom-logo {
+            @include box(6rem);
+        }
 
-    .footer-navigation {
-        ul {
-            @include reset;
-            text-align: center;
-
-            @include tablet {
-                display: flex;
+        .store-info {
+            @include flex-center-column;
+            
+            @include large {
                 flex-direction: row;
-            }
-
-            @include large {
-                font-size: .8rem;
-            }
-
-            @include desktop {
-                font-size: 1rem;
-            }
-            
-            li {
-                padding: .5rem;
+                
+                address {
+                    max-width: 12.5rem;
+                }
             }
         }
-    }
 
-    .footer-sign-in {
 
-        padding: .4375rem;
+        .footer-navigation {
+            ul {
+                @include reset;
+                text-align: center;
 
-        .sign-in-logo {
-            vertical-align: middle;
-            margin-right: 0.2rem;
+                @include tablet {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                @include large {
+                    font-size: .8rem;
+                }
+
+                @include desktop {
+                    font-size: 1rem;
+                }
+                
+                li {
+                    padding: .5rem;
+                }
+            }
         }
 
-        .sign-in-link {
-            vertical-align: middle;
-            font-family: $font__headings;
-            @include large {
-                font-size: .8rem;
+        .footer-sign-in {
+
+            padding: .4375rem;
+
+            .sign-in-logo {
+                vertical-align: middle;
+                margin-right: 0.2rem;
             }
-            @include desktop {
-                font-size: 1rem;
+
+            .sign-in-link {
+                vertical-align: middle;
+                font-family: $font__headings;
+                @include large {
+                    font-size: .8rem;
+                }
+                @include desktop {
+                    font-size: 1rem;
+                }
             }
+
         }
 
     }
