@@ -2,6 +2,9 @@
 .home {
     .testimonials {
         background-image: linear-gradient(to bottom, #474747 0%, #474747 96%, white 100%);
+        h2 {
+            margin-top: 5rem; 
+        }
         .wp-block-pullquote {
             blockquote {
                 color: $color_white;
@@ -14,6 +17,10 @@
 }
 .archive {
     .testimonials {
+        margin-top: 2rem; 
+        @include large {
+            margin-top: 5rem; 
+        }
         .wp-block-pullquote {
             blockquote {
                 color: $color_dark_green;
@@ -31,7 +38,6 @@
     align-items: center;
     padding: 3.125rem .625rem;
     min-width: 100%;
-    margin-top: 1rem; 
 
     @include large {
         flex-wrap: wrap;
