@@ -270,19 +270,19 @@ function wcss_login_styles() {
 		body.login .privacy-policy-link {
 			color: white;
 			transition: all 0.3s ease;
-			padding: 0.5rem 1rem; 
 			border-radius: 5px;
+			padding: 0.75rem 0.25rem;
 			font-weight: 600;
 			text-transform: uppercase;
+			display: flex;
+			justify-content: center;
 		}
 
 		body.login #nav .wp-login-lost-password:hover,
-		body.login div#login p#backtoblog a:hover,
-		body.login .privacy-policy-link:hover {
+		body.login div#login p#backtoblog a:hover {
 			color: white;
 			background-color: #00422A;
 			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-			text-decoration: none;
 		}
 
 		body.login .submit #wp-submit {
@@ -290,6 +290,14 @@ function wcss_login_styles() {
 			border-color: black;
 		}
 
+		/* privacy policy */
+		body.login .privacy-policy-link {
+			text-decoration: none;	
+		}
+
+		body.login .privacy-policy-link:hover {
+			text-decoration: underline;	
+		}
 
     </style>
     <?php
