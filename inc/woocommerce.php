@@ -345,19 +345,18 @@ function display_calendar() {
 				<h1 class="workshops-header"><?php echo esc_html($category->name); ?></h1>
 				<?php the_post_thumbnail(); ?>
 			</div>
-		  <section class='calendar'><?php
-		  if (function_exists('get_field')) { 
-			if (get_field('workshop_overview')) {
-				?>
-				<p class="workshop-overview"><?php the_field('workshop_overview'); ?></p>
-				<?php
-			}
-		}
-				the_content();
-        	}
-            wp_reset_postdata();
-
-        ?> </section> <?php
+            <section class='calendar'><?php
+                if (function_exists('get_field')) { 
+                    if (get_field('workshop_overview')) {
+                        ?>
+                        <p class="workshop-overview"><?php the_field('workshop_overview'); ?></p>
+                        <?php
+                    }
+                }
+                the_content();
+            ?> </section> <?php
+        }
+        wp_reset_postdata();
     }
 }
 add_action('woocommerce_shop_loop_header', 'display_calendar');
@@ -365,7 +364,6 @@ add_action('woocommerce_shop_loop_header', 'display_calendar');
 // display upcoming workshops header on Workshops page
 function upcoming_workshops() {
     if (is_product_category('workshops')) {
-
 		?><h2 class="upcoming-workshops">Upcoming Workshops</h2><?php
     }
 }
@@ -378,7 +376,7 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 // Remove sorting on workshop page
 function remove_catalog_ordering() {
 	if (is_product_category('workshops')) {
-	remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+	    remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 	}
 }
 add_filter('woocommerce_before_shop_loop', 'remove_catalog_ordering');

@@ -232,8 +232,8 @@ add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 function my_acf_google_map_api( $api ){
 	$api['key'] = $GLOBALS['api_key'];
 	return $api;
-	}
-	add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 // Lower Yoast SEO Metabox location

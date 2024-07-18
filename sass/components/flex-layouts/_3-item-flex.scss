@@ -1,10 +1,12 @@
 // Home Page Testimonials
 .home {
     .testimonials {
+
         @include phone {
             background-image: linear-gradient(to bottom, #474747 0%, #474747 96%, white 100%);
             padding-bottom: 10rem;
         }
+
         h2 {
             margin: 5rem 0rem 4rem 0rem; 
             color: $color_dark_green;
@@ -12,6 +14,7 @@
                 color: $color_white;
             }
         }
+
         .wp-block-pullquote {
             blockquote {
                 color: $color_dark_green;
@@ -26,7 +29,9 @@
     }
 }
 .archive {
+
     .testimonials {
+
         @include phone {
             margin: 2rem;
         }
@@ -34,6 +39,7 @@
         @include large {
             margin-top: 5rem; 
         }
+
         .wp-block-pullquote {
             blockquote {
                 color: $color_dark_green;
@@ -122,21 +128,22 @@
     }
     
     ul {
-    @include flex-center-column;
-    max-width: 18.75rem;
-    margin: 0 auto;
-
-    @include tablet {
-        align-items: stretch;
-        max-width: 100%;
-    }
-    
-    li, .price {
         @include flex-center-column;
-    }
-    @include tablet {
-        flex-direction: row;
-    }
+        max-width: 18.75rem;
+        margin: 0 auto;
+
+        @include tablet {
+            align-items: stretch;
+            max-width: 100%;
+        }
+        
+        li, .price {
+            @include flex-center-column;
+        }
+        
+        @include tablet {
+            flex-direction: row;
+        }
     }
 
     h2 {

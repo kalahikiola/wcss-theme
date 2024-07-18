@@ -16,6 +16,7 @@
 		grid-template-columns: auto auto auto auto;
 
 		li {
+
 			a {
 				transition: transform .3s ease;
 
@@ -23,7 +24,9 @@
 					transform: scale(1.15);
 				}
 			}
+
 		}
+
 	}
 
 	#header-right {
@@ -38,6 +41,7 @@
 				&:hover {
 					transform: scale(1.15);
 				}
+
 				.sign-in-logo:hover,
 				.cart-icon:hover {
 					path,
@@ -45,6 +49,7 @@
 						fill: $color_dark_green;
 					}
 				}
+                
 			}
 		}
 	}

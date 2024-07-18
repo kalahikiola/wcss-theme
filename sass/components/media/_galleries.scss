@@ -16,6 +16,7 @@
 	.gallery-columns-#{$i} {
 		grid-template-columns: repeat($i, 1fr);
 	}
+    
 }
 
 .gallery-caption {
