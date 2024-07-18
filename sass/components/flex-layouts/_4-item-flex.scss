@@ -57,6 +57,12 @@ main {
 .home {
     .wp-block-heading {
         margin: 6rem 0rem;
+        @include tablet {
+            font-size: 1.75rem;
+        }
+        @include large {
+            font-size: 2rem;
+        }
     }
     .wc-block-grid__products {
         margin-bottom: 8rem;
@@ -66,6 +72,13 @@ main {
             margin: 4rem 0rem;
             @include tablet {
                 margin: 8rem 0rem;
+                font-size: 1.25rem;
+                @include tablet {
+                    font-size: 1.75rem;
+                }
+                @include large {
+                    font-size: 2rem;
+                }
             }
         }
     }

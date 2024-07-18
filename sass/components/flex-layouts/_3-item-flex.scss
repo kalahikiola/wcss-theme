@@ -59,17 +59,14 @@
     h2 {
         width: 100%;
         text-align: center;
-        font-size: 1.5rem;
         color: $color_white;
         font-family: $font__body;
+        padding: 0rem .5rem;
         @include tablet {
             font-size: 1.75rem;
         }
         @include large {
             font-size: 2rem;
-        }
-        @include desktop {
-            font-size: 2.5rem;
         }
     }
 
