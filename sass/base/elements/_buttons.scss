@@ -29,8 +29,14 @@ input[type="submit"],
 .wp-block-button__link, .add_to_cart_button, .cta-button {
 	&:visited {
 		color: $color_white;
-		background-color: $color_dark_green;
+		background-color: $color_black;
 	}
+    &:hover {
+        color: #ffffff;
+        background-color: $color_dark_green;
+        border: 1px solid $color_dark_green;
+        transition: all 0.3s ease-in;
+      }
 }
 
 .cta-button {
