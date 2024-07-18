@@ -49,12 +49,14 @@ main {
             gap: 1rem;
         }
     }
+
     .instructors article {
         margin-bottom: 1rem;
     }
 }
 
 .home {
+
     .wp-block-heading {
         margin: 6rem 0rem;
         @include tablet {
@@ -64,9 +66,11 @@ main {
             font-size: 2rem;
         }
     }
+
     .wc-block-grid__products {
         margin-bottom: 8rem;
     }
+
     .featured-workshops {
         h2 {
             margin: 4rem 0rem;
@@ -85,25 +89,29 @@ main {
 }
 
 .term-workshops {
+
     .workshops-flex {
+
         .upcoming-workshops {
             margin: 5rem 0rem;
             @include large {
                 margin: 7rem 0rem;
                 font-size: 2rem;
             }
-
         }
+        
     }
+
     .instructors {
+
         h2 {
             margin: 5rem 0rem 6rem 0rem;
             @include large {
                 margin: 7rem 0rem;
                 font-size: 2rem;
             }
-
         }
+
     }
 
 }

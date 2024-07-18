@@ -28,13 +28,8 @@
             max-width: 120rem;
             margin: 0 auto;
         }
-    
+    }
 }
-}
-
-// .site-header {
-// 	grid-area: header;
-// }
 
 .site-main {
 	grid-area: main;
@@ -56,9 +51,5 @@
         display: block;
     }
 }
-
-// .site-footer {
-// 	grid-area: footer;
-// }
 
 @import "no-sidebar";

@@ -2,11 +2,6 @@
 	display: block;
 }
 
-// .post,
-// .page {
-// 	margin: 0 0 1.5em;
-// }
-
 .updated:not(.published) {
 	display: none;
 }
@@ -31,12 +26,13 @@
     h1 {
         text-align: center;
     }
-    .entry-content {
-    @include flex-center-column;
 
-    @include large {
-        flex-direction: row;
-        gap: 3rem;
+    .entry-content {
+        @include flex-center-column;
+
+        @include large {
+            flex-direction: row;
+            gap: 3rem;
 
             img {
                 width: 28.125rem;
@@ -50,15 +46,18 @@
 
 // Privacy Policy page, Refunds and Returns, Terms & conditions
 .privacy-policy, .post-29, .post-299 {
+
     .entry-header {
         text-align: center;
     }
+
     .entry-content {
-    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
-    padding: 1rem;
-    max-width: 75rem;
-    margin: 0 auto;
+        box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.75);
+        padding: 1rem;
+        max-width: 75rem;
+        margin: 0 auto;
     }
+
 }
 
 
