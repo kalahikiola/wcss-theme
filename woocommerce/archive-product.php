@@ -19,6 +19,10 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
+if ( !is_product_category('workshops') ) {
+    echo '<div class="shop-content-wrapper">';
+}
+
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -101,6 +105,10 @@ do_action( 'woocommerce_after_main_content' );
  */
 if( !is_product_category( 'workshops' ) ) {
     do_action( 'woocommerce_sidebar' );
+}
+
+if ( !is_product_category('workshops') ) {
+    echo '</div>';
 }
 
 get_footer( 'shop' );
