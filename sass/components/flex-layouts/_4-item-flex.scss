@@ -73,10 +73,10 @@ main {
 
 .term-workshops {
     .workshops-flex {
-        h2 {
+        .upcoming-workshops {
             margin: 5rem 0rem;
-            @include tablet {
-                margin: 8rem 0rem;
+            @include large {
+                margin: 7rem 0rem;
                 font-size: 2rem;
             }
 
@@ -85,8 +85,8 @@ main {
     .instructors {
         h2 {
             margin: 5rem 0rem 6rem 0rem;
-            @include tablet {
-                margin: 8rem 0rem;
+            @include large {
+                margin: 7rem 0rem;
                 font-size: 2rem;
             }
 
