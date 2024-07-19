@@ -377,6 +377,12 @@ function display_dashboard_tutorials() {
                     <source src="<?php echo site_url('/wp-content/uploads/2024/07/Add-New-Product-Video.mp4'); ?>" type="video/mp4">
                 </video>
             </li>
+            <h4>How to add a new instructor</h4>
+			<li>
+                <video width=320 height=240 controls>
+                    <source src="<?php echo site_url('/wp-content/uploads/2024/07/instructor_tutorial.mp4'); ?>" type="video/mp4">
+                </video>
+            </li>
         </ul>
     </div>
     <?php
