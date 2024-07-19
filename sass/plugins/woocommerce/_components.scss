@@ -277,12 +277,27 @@ p.no-comments {
 }
 
 // center headings on **compare product** page
-.woocommerce-products-compare-content.woocommerce table { 
+.woocommerce-products-compare-content.woocommerce table {
+	max-width: 75rem;
+	margin: 1rem auto;
 	thead tr th:first-child{
 		text-align: center;
+	}
+	 tr th {
+		display: none;
+	}
+
+	tbody tr:nth-child(2) {
+		display: none;
 	}
 
 	tbody tr td {
 		text-align: center;
+	}
+
+	tfoot {
+		tr:first-child {
+			display: none;
+		}
 	}
 }
